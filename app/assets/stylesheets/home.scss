@@ -17,11 +17,17 @@ body {
         ul {
             li {
                 a {
+
                     &:hover {
                         background-color: transparent;
                         color: whitesmoke;
                     }
-                }          
+                } 
+                
+                .header-name {
+                    color: whitesmoke;
+                    cursor: pointer;
+                }
             }
         }
     }   
