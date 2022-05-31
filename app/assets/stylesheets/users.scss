@@ -3,7 +3,14 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 h1 {
     text-align: center;
-    padding-top: 100px;
     text-transform: uppercase;
 }
 
+.btn {
+    width: 100%;
+    margin-top: 10px;
+
+    .btn-primary {
+        width: 100%;
+    }
+}

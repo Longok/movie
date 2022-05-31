@@ -1,10 +1,35 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.row {
+    header {
+        padding: 0 8%;
+        height: 50px;
+        background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
+        border-bottom: 1px solid black;
+        
+        ul {
+            li {
+                a {
+                    &:hover {
+                        background-color: transparent;
+                        color: whitesmoke;
+                    }
+                }          
+            }
+        }
+    }   
+}
+
 #logo {
     font-size: 22px;
-    color: whitesmoke;
-    margin-left: 50px;
+    color: rgb(39, 37, 37);
     text-transform: uppercase;
     text-decoration: none;
 }
@@ -12,11 +37,11 @@
 
 // footer
 .footer {
-    background: rgb(46, 44, 44);
-    margin-top: 2rem;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    margin-top: 5rem;
     padding: 0 8%;
     border-top: .1rem solid rgb(185, 181, 181);
-    color: whitesmoke;
+    color: rgb(31, 30, 30);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -28,42 +53,36 @@
         gap: 1.5rem;
 
         .box {
-            .footer-app img {
-                padding: .5rem 0;
-            }
-
+           
             p {
-                line-height: 1.8;
+                line-height: 1.4;
                 font-weight: bolder;
                 font-size: 2rem;
-                color: rgb(181, 181, 243);
+                color: rgba(83, 83, 241, 0.7);
                 padding-top: .5rem;
-                
+                text-transform: uppercase;         
             }
 
-            .links-web {
-                font-size: 1.5rem;
+            a {
                 display: block;
+                font-size: 1.5rem;
+                color: rgb(22, 21, 21);
                 padding: .5rem 0;
-            }
+                text-decoration: none;
+                transition: linear .2s;
 
-            .links {
-                display: block;
-                font-size: 1.5rem;
-                color: var(--light-color);
-                padding: 1rem 0;
-
-                .links:hover {
-                    i {
-                        padding-right: 2rem;
-                    }   
-                }    
-
-                i {
-                    color: var(--blue);
-                    padding-right: .5rem;
+                &:hover {
+                    padding-left: 1rem;
+                    color: whitesmoke;
                 }
             }
+
+            .footer-app {
+                
+                img {
+                    padding: .5rem 0;
+                }
+            } 
         }
          
     }
@@ -74,12 +93,8 @@
     margin-top: 2rem;
     padding-top: 1rem;
     font-size: 2rem;
-    color: #fff;
-    background: #1a3080;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    color: rgb(59, 62, 66);
+    background: linear-gradient(circle,rgba(238,174,202,1) 100%, rgba(148,187,233,1) 0%);
 
     span {
         color: var(--orange);
