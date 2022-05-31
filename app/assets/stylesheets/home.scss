@@ -1,3 +1,88 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#logo {
+    font-size: 22px;
+    color: whitesmoke;
+    margin-left: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
+// footer
+.footer {
+    background: rgb(46, 44, 44);
+    margin-top: 2rem;
+    padding: 0 8%;
+    border-top: .1rem solid rgb(185, 181, 181);
+    color: whitesmoke;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 1.5rem;
+
+        .box {
+            .footer-app img {
+                padding: .5rem 0;
+            }
+
+            p {
+                line-height: 1.8;
+                font-weight: bolder;
+                font-size: 2rem;
+                color: rgb(181, 181, 243);
+                padding-top: .5rem;
+                
+            }
+
+            .links-web {
+                font-size: 1.5rem;
+                display: block;
+                padding: .5rem 0;
+            }
+
+            .links {
+                display: block;
+                font-size: 1.5rem;
+                color: var(--light-color);
+                padding: 1rem 0;
+
+                .links:hover {
+                    i {
+                        padding-right: 2rem;
+                    }   
+                }    
+
+                i {
+                    color: var(--blue);
+                    padding-right: .5rem;
+                }
+            }
+        }
+         
+    }
+}
+
+.credit {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    background: #1a3080;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    span {
+        color: var(--orange);
+    }
+}
+
