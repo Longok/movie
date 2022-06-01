@@ -1,0 +1,9 @@
+<%= form_for @room do |f| %>
+
+    <%= render "shared/error_messages", object: @room %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control" %>
+
+    <%= f.submit "Create room", class:"btn btn-primary" %>
+<% end %>
