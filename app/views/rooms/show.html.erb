@@ -3,10 +3,12 @@
     <h4 class="text-center">The room has <%= pluralize @room.seats.count, "seat" %></h4>
 </div>
 
-<% @room.seats.each do |a| %>
+<% @room.seats.each do |seat| %>
 
-    <%= a.name %> <br>
-
+    <%= link_to seat.name %>
+    | <%= link_to "Edit", edit_room_seat_path(seat.room, seat) %>
+    | <%= link_to "Delete", [seat.room, seat], method: :delete, data: {confirm: "You sure"} %> <br>
+    <br>
 <% end %>
 
 <%= link_to "Create Seat", new_room_seat_path(@room) %>

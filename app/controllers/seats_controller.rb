@@ -17,11 +17,30 @@ class SeatsController < ApplicationController
 
     end
 
-    def show
-        @room = Room.find_by id: params[:id]
-        @seat = @room.seats.order("id DESC")
+    def edit 
+        room = Room.find(params[:room_id])
+        @seat = room.seats.find(params[:id])
     end
 
+    def update
+        room = Room.find(params[:room_id])
+        @seat = room.seats.find(params[:id])
+        if @seat.update seats_params
+            flash[:info] = "Update seat successfully"
+            redirect_to [@seat.room]
+        else
+            render :edit, notice: "Update fail"
+        end
+    end
+
+
+    def destroy
+        room = Room.find(params[:room_id])
+        @seat = room.seats.find(params[:id])
+        @seat.destroy
+        flash[:info] = "Delete seat successfully"
+        redirect_to [@seat.room]
+    end
 
     private
     def seats_params
