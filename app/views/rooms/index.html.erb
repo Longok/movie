@@ -1,5 +1,7 @@
 <% @rooms.each do |room| %>
 
-    <%= room.name %> <br>
+    <%= room.name %>
+     <%= link_to "Show", room_path(room) %> |
+     <%= link_to "Delete", room , method: :delete, data: {confirm: "You sure"} %><br>
 
 <% end %>

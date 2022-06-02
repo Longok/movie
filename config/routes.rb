@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   delete 'logout', to: "sessions#destroy"
 
   resources :users
-  resources :rooms
+  resources :rooms do
+    resources :seats
+  end
 end

@@ -1,0 +1,12 @@
+<%= form_for ([@seat.room, @seat]) do |f| %>
+
+    <%= render "shared/error_messages", object: @seat %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control" %>
+
+    <%= f.hidden_field :room_id, :value => @seat.room_id, class:"form-control" %>
+
+
+    <%= f.submit "Create seat", class:"btn btn-primary" %>
+<% end %>

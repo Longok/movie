@@ -1,5 +1,5 @@
 class Room < ApplicationRecord
+    has_many :seats
 
-
-    validates :name, presence: true, length: {minimum: 2}
+    validates :name, uniqueness: true, presence: true, length: {minimum: 2}
 end

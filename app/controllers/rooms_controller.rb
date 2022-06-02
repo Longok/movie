@@ -10,9 +10,9 @@ class RoomsController < ApplicationController
     end
 
     def show
-        @room = Room.find_by id: params[:id]
+        @room = Room.find(params[:id])
     end
-
+    
     def create
         @room = Room.new rooms_params
         if @room.save
@@ -23,7 +23,13 @@ class RoomsController < ApplicationController
         end
     end
 
-  
+    def destroy
+        @room = Room.find_by id: params[:id]
+        @room.destroy 
+        flash[:info] = "Delete room successfully"
+        redirect_to @room
+    end
+
 
     private
     def rooms_params
