@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
     end
     
     def create
-        @room = Room.new rooms_params
+        @room = Room.new room_params
         if @room.save
             flash[:info] = "Create room successfully"
             redirect_to @room
@@ -33,7 +33,7 @@ class RoomsController < ApplicationController
 
 
     private
-    def rooms_params
+    def room_params
         params.require(:room).permit :name
     end
 end
