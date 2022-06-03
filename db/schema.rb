@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_03_010034) do
+ActiveRecord::Schema.define(version: 2022_06_03_111819) do
 
   create_table "days", force: :cascade do |t|
     t.string "name"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 2022_06_03_010034) do
     t.index ["room_id"], name: "index_seats_on_room_id"
   end
 
+  create_table "showtimes", force: :cascade do |t|
+    t.time "time"
+    t.integer "day_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["day_id"], name: "index_showtimes_on_day_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -44,4 +52,5 @@ ActiveRecord::Schema.define(version: 2022_06_03_010034) do
 
   add_foreign_key "days", "rooms"
   add_foreign_key "seats", "rooms"
+  add_foreign_key "showtimes", "days"
 end

@@ -1,9 +1,14 @@
 <h1>All days </h1>
 
+
 <% @days.each do |day| %>
 
-   Lịch chiếu: <%= link_to day.name, days_path(day) %> | <%= link_to day.room.name, room_path(day.room) %><br>
+   Lịch chiếu: <%= link_to day.name, days_path(day) %>   
+   | Xuất chiếu: <%= link_to day.showtimes.ids %>
+   | <%= link_to day.room.name, room_path(day.room) %><br>
 
 <% end %>
 
-<%= link_to "Create days", new_day_path %>
+
+
+<%= link_to "Create days", new_day_path(@room) %>
