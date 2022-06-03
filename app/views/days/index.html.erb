@@ -1,0 +1,9 @@
+<h1>All days </h1>
+
+<% @days.each do |day| %>
+
+    <%= link_to day.name, day_path(day) %> | Room: <%= link_to day.room.name, room_path(day) %><br>
+
+<% end %>
+
+<%= link_to "Create days", new_day_path %>

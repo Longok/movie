@@ -7,7 +7,7 @@
 
     <%= link_to seat.name %>
     | <%= link_to "Edit", edit_room_seat_path(seat.room, seat) %>
-    | <%= link_to "Delete", [seat.room, seat], method: :delete, data: {confirm: "You sure"} %> <br>
+    | <%= link_to "Delete", [seat.room, seat], method: :delete, data: {confirm: "You sure"} %>
     <br>
 <% end %>
 

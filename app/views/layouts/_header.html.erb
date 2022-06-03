@@ -5,6 +5,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to "Home", '/' %></li>
       <li><%= link_to "Room", rooms_path %></li>
+      <li><%= link_to "Days", days_path %></li>
 
       <% if logged_in %>
         <li><a class="header-name"><%= @current_user.name %></a></li>
