@@ -1,14 +1,20 @@
 <div>
     <h1>Page Room: <%= @room.name %></h1>
     <h4 class="text-center">The room has <%= pluralize @room.seats.count, "seat" %></h4>
+    <h4 class="text-center">The room has <%= pluralize @room.days.count, "day" %></h4>
 </div>
 
+<div>
+    Lịch chiếu:
+    <% @room.days.each do |day| %>
+        <%= link_to day.name %> |
+    <% end %>
+</div>
 <% @room.seats.each do |seat| %>
 
     <%= link_to seat.name %>
     | <%= link_to "Edit", edit_room_seat_path(seat.room, seat) %>
-    | <%= link_to "Delete", [seat.room, seat], method: :delete, data: {confirm: "You sure"} %>
-    <br>
+    | <%= link_to "Delete seat", [seat.room, seat], method: :delete, data: {confirm: "You sure"} %><br>
 <% end %>
-
-<%= link_to "Create Seat", new_room_seat_path(@room) %>
+<%= link_to "Create Seat", new_room_seat_path(@room) %> <br>
+<%= link_to "Create Day", new_day_path(@room) %>

@@ -30,7 +30,7 @@ class SeatsController < ApplicationController
     def update
         room = Room.find(params[:room_id])
         @seat = room.seats.find(params[:id])
-        if @seat.update seats_params
+        if @seat.update seat_params
             flash[:info] = "Update seat successfully"
             redirect_to [@seat.room]
         else

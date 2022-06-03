@@ -1,9 +1,10 @@
 <% @rooms.each do |room| %>
 
     <%= room.name %>
-     <%= link_to "Show", room_path(room) %> |
-     <%= link_to "Delete", room , method: :delete, data: {confirm: "You sure"} %><br>
-
+        <%= link_to "Show", room_path(room) %> |
+        <%= link_to "Delete", room , method: :delete, data: {confirm: "You sure"} %>
+    | Lịch chiếu phim: <%= room.days.name %> <br>
 <% end %>
 
-<%= link_to "Create room", new_room_path %>
+<%= link_to "Create room", new_room_path %> 
+

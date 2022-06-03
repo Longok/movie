@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
     before_action :logged_in_admin, only: [:new, :create]
 
     def index
-        @rooms = Room.all.order('name DESC')
+        @rooms = Room.all
     end
 
     def new
@@ -11,7 +11,6 @@ class RoomsController < ApplicationController
 
     def show
         @room = Room.find(params[:id])
-        @seat = @room.seats.order('name DESC')
     end
     
     def create

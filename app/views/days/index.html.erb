@@ -2,7 +2,7 @@
 
 <% @days.each do |day| %>
 
-    <%= link_to day.name, day_path(day) %> | Room: <%= link_to day.room.name, room_path(day) %><br>
+   Lịch chiếu: <%= link_to day.name, days_path(day) %> | <%= link_to day.room.name, room_path(day.room) %><br>
 
 <% end %>
 
