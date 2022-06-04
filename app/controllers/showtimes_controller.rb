@@ -26,6 +26,6 @@ class ShowtimesController < ApplicationController
     private
 
     def showtime_params
-        params.require(:showtime).permit :time, :day_id
+        params.require(:showtime).permit :time, :day_id, :room_id
     end
 end

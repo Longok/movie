@@ -8,6 +8,9 @@
     <%= f.label :day_id %>
     <%= f.select :day_id, Showtime::DAY_ID, class:"form-control" %>
 
+    <%= f.label :room_id %>
+    <%= f.select :room_id, Showtime::ROOM_ID, class:"form-control" %>
+
     <%= f.submit "Create times", class:"btn btn-primary"  %>
 
 <% end %>
