@@ -13,8 +13,5 @@ Rails.application.routes.draw do
   resources :rooms do
     resources :seats
   end
-  resources :days
   resources :showtimes
-
-  
 end

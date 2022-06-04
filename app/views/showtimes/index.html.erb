@@ -1,11 +1,5 @@
 <h1>Page times</h1>
 
-<% @showtimes.each do |showtime| %>
+<%= render @showtimes %>
 
-    Lịch chiếu: <%= link_to showtime.day.name, day_path(showtime.day_id) %> 
-    | Xuất chiếu: <%= link_to showtime.time.strftime('%I: %M %p'), showtime_path(showtime) %>
-    | <%= link_to showtime.day.room.name, room_path(showtime.room_id) %><br>
-
-<% end %>
-
-<%= link_to "Create times", new_showtime_path(@day) %>
+<%= link_to "Create times", new_showtime_path %>

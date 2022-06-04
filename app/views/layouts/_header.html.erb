@@ -5,12 +5,11 @@
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to "Home", '/' %></li>
       <li><%= link_to "Room", rooms_path %></li>
-      <li><%= link_to "Days", days_path %></li>
-      <li><%= link_to "Times", showtimes_path %></li>
+      <li><%= link_to "ShowTimes", showtimes_path %></li>
 
       <% if logged_in %>
         <li><a class="header-name"><%= @current_user.name %></a></li>
-        <li><%= link_to "Sign out", logout_path, method: :delete %></li> 
+        <li><%= link_to "Sign out", logout_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "Log in", login_path %></li>
       <% end %>

@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_04_075755) do
+ActiveRecord::Schema.define(version: 2022_06_03_111819) do
 
-  create_table "days", force: :cascade do |t|
-    t.string "name"
-    t.integer "room_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["room_id"], name: "index_days_on_room_id"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
@@ -28,19 +23,18 @@ ActiveRecord::Schema.define(version: 2022_06_04_075755) do
 
   create_table "seats", force: :cascade do |t|
     t.string "name"
-    t.integer "room_id", null: false
+    t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_seats_on_room_id"
   end
 
   create_table "showtimes", force: :cascade do |t|
-    t.time "time"
-    t.integer "day_id", null: false
+    t.datetime "time"
+    t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "room_id"
-    t.index ["day_id"], name: "index_showtimes_on_day_id"
+    t.index ["room_id"], name: "index_showtimes_on_room_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,7 +45,6 @@ ActiveRecord::Schema.define(version: 2022_06_04_075755) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "days", "rooms"
   add_foreign_key "seats", "rooms"
-  add_foreign_key "showtimes", "days"
+  add_foreign_key "showtimes", "rooms"
 end
