@@ -1,11 +1,11 @@
 class Showtime < ApplicationRecord
   belongs_to :room
 
-  validates :time, presence: true
+  validates :time, presence: true, uniqueness: true
   validates :room_id, presence: true
 
   def in_date
-    time.strftime('%Y-%m-%d')
+    time.strftime('%d-%m-%Y')
   end
 
   def in_time
@@ -13,6 +13,6 @@ class Showtime < ApplicationRecord
   end
 
   def show_at
-    time.strftime('%I: %M %p %Y-%m-%d')
+    time.strftime('%I: %M %p %d-%m-%Y')
   end
 end

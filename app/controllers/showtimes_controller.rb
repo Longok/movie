@@ -9,7 +9,6 @@ class ShowtimesController < ApplicationController
     end
 
     def create
-        binding.pry
         @showtime = Showtime.new showtime_params
         if @showtime.save
             flash[:info] = "Create times successfully"

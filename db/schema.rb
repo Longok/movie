@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_06_03_111819) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "rooms", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -23,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_06_03_111819) do
 
   create_table "seats", force: :cascade do |t|
     t.string "name"
-    t.bigint "room_id", null: false
+    t.integer "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_seats_on_room_id"
@@ -31,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_06_03_111819) do
 
   create_table "showtimes", force: :cascade do |t|
     t.datetime "time"
-    t.bigint "room_id", null: false
+    t.integer "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_showtimes_on_room_id"

@@ -17,6 +17,15 @@ User.create!(name: "Long Huynh",
 end
 
 15.times do |n|
+    name = "A"
+    room_id = "1"
+
+    Seat.create!(name: "#{name}-#{n+1}",
+        room_id: room_id
+    )
+end
+
+15.times do |n|
     name = "B"
     room_id = "2"
 
