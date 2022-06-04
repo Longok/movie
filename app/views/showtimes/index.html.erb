@@ -2,8 +2,8 @@
 
 <% @showtimes.each do |showtime| %>
 
-    Lịch chiếu: <%= link_to showtime.day.name, showtime_path(showtime) %> 
-    | Xuất chiếu: <%= showtime.time.strftime('%I: %M %p') %>
+    Lịch chiếu: <%= link_to showtime.day.name, day_path(showtime.day) %> 
+    | Xuất chiếu: <%= link_to showtime.time.strftime('%I: %M %p'), showtime_path(showtime) %>
     | <%= link_to showtime.day.room.name, room_path(showtime.day.room) %><br>
 
 <% end %>

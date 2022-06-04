@@ -23,5 +23,40 @@ end
     Seat.create!(name: "#{name}-#{n+1}",
         room_id: room_id
     )
+end
 
+15.times do |n|
+    name = "B"
+    room_id = "2"
+
+    Seat.create!(name: "#{name}-#{n+1}",
+        room_id: room_id
+    )
+end
+
+15.times do |n|
+    name = "C"
+    room_id = "3"
+
+    Seat.create!(name: "#{name}-#{n+1}",
+        room_id: room_id
+    )
+end
+
+15.times do |n|
+    name = "D"
+    room_id = "4"
+
+    Seat.create!(name: "#{name}-#{n+1}",
+        room_id: room_id
+    )
+end
+
+15.times do |n|
+    name = "E"
+    room_id = "5"
+
+    Seat.create!(name: "#{name}-#{n+1}",
+        room_id: room_id
+    )
 end
