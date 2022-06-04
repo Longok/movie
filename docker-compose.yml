@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  movie_db:
+    image: postgres:10
+    container_name: movie_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  movie_app:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/usr/src/app/:cached
+      - bundle:/usr/local/bundle
+      - rails_cache:/usr/src/app/tmp/cache
+      - node_modules:/usr/src/app/node_modules
+    ports:
+      - 3000:3000
+    depends_on:
+      - movie_db
+
+volumes:
+  bundle:
+  postgres:
+  node_modules:
+  rails_cache:

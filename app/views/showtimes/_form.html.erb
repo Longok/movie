@@ -3,13 +3,10 @@
     <%= render "shared/error_messages", object: @showtime %>
 
     <%= f.label :time %>
-    <%= f.text_field :time, class:"form-control" %>
-
-    <%= f.label :day_id %>
-    <%= f.select :day_id, Showtime::DAY_ID, class:"form-control" %>
-
+    <%= f.datetime_select :time, class:"form-control" %>
+    <br />
     <%= f.label :room_id %>
-    <%= f.select :room_id, Showtime::ROOM_ID, class:"form-control" %>
+    <%= f.collection_select(:room_id, Room.all, :id, :name, class:"form-control") %>
 
     <%= f.submit "Create times", class:"btn btn-primary"  %>
 

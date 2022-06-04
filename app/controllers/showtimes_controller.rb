@@ -1,7 +1,7 @@
 class ShowtimesController < ApplicationController
 
     def index
-        @showtimes = Showtime.all
+        @showtimes = Showtime.includes(:room).all
     end
 
     def new
@@ -9,6 +9,7 @@ class ShowtimesController < ApplicationController
     end
 
     def create
+        binding.pry
         @showtime = Showtime.new showtime_params
         if @showtime.save
             flash[:info] = "Create times successfully"
@@ -26,6 +27,6 @@ class ShowtimesController < ApplicationController
     private
 
     def showtime_params
-        params.require(:showtime).permit :time, :day_id, :room_id
+        params.require(:showtime).permit :time, :room_id
     end
 end
