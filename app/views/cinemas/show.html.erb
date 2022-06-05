@@ -1,0 +1,9 @@
+<h1>show movie</h1>
+
+<%= image_tag @cinema.image.variant(resize_to_limit: [160, 160]) if @cinema.image.attached? %>
+<%= @cinema.name %>
+<%= @cinema.year %>
+<%= @cinema.time %>
+<br>
+<%= link_to "Edit", edit_cinema_path(@cinema) %>
+<%= link_to "Delete", @cinema, method: :delete, data: { confirm: "You are sure"} %>

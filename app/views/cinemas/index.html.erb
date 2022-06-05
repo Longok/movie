@@ -1,0 +1,10 @@
+<h1>Page movies</h1>
+
+<% @cinemas.each do |cinema| %>
+    <%= image_tag cinema.image.variant(resize_to_limit: [160, 160]) if cinema.image.attached? %>
+    <%= link_to cinema.name, cinema_path(cinema) %>
+    <%= cinema.year %>
+    <%= cinema.time %>
+<% end %>
+<br>
+<%= link_to "Create movie", new_cinema_path  %>
