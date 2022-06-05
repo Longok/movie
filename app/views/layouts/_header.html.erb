@@ -6,6 +6,7 @@
       <li><%= link_to "Home", '/' %></li>
       <li><%= link_to "Room", rooms_path %></li>
       <li><%= link_to "ShowTimes", showtimes_path %></li>
+      <li><%= link_to "Movie", cinemas_path %></li>
 
       <% if logged_in %>
         <li><a class="header-name"><%= @current_user.name %></a></li>
