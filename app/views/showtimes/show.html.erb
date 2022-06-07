@@ -1,2 +1,10 @@
-<%= @showtime.time.strftime('%I: %M %p')  %> Rap: <%= @showtime.room_id %>
+<br>
+<%= image_tag @showtime.cinema.image.variant(resize_to_limit: [160, 160]) if @showtime.cinema.image.attached? %>
 
+<%= @showtime.cinema.name %>
+<%= @showtime.cinema.year %>
+<%= @showtime.cinema.time %>
+| Xuat chieu: <%= @showtime.time.strftime('%I: %M %p')  %> 
+| Rap: <%= @showtime.room_id %>
+
+<br>

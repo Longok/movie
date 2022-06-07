@@ -1,2 +1,8 @@
-Lịch chiếu: <%= showtime.in_date %> | Xuất chiếu: <%= showtime.in_time %>
-| <%= link_to showtime.room.name, room_path(showtime.room) %><br>
+<%= image_tag showtime.cinema.image.variant(resize_to_limit: [160, 160]) if showtime.cinema.image.attached? %>
+<%= showtime.cinema.name %>
+
+| Lịch chiếu: <%= showtime.in_date %> | Xuất chiếu: <%= showtime.in_time %>
+
+| <%= link_to showtime.room.name, room_path(showtime.room) %>
+<br>
+<br>

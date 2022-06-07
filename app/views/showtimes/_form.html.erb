@@ -4,9 +4,12 @@
 
     <%= f.label :time %>
     <%= f.datetime_select :time, class:"form-control" %>
-    <br />
+    <br>
     <%= f.label :room_id %>
     <%= f.collection_select(:room_id, Room.all, :id, :name, class:"form-control") %>
+    <br>
+    <%= f.label :cinema_id %>
+    <%= f.collection_select(:cinema_id, Cinema.all, :id, :name, class:"form-controll") %>
 
     <%= f.submit "Create times", class:"btn btn-primary"  %>
 

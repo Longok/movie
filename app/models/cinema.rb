@@ -1,5 +1,5 @@
 class Cinema < ApplicationRecord
-
+    has_many :showtimes
     has_one_attached :image
 
     validates :name, presence: true, length: { minimum: 6}
