@@ -2,56 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
-    height: 100vh;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-.row {
-    header {
-        padding: 0 8%;
-        height: 50px;
-        background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
-        border-bottom: 1px solid black;
-        
-        ul {
-            li {
-                a {
 
-                    &:hover {
-                        background-color: transparent;
-                        color: whitesmoke;
-                    }
-                } 
-                
-                .header-name {
+header {
+    padding: 0 8%;
+    height: 50px;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
+    border-bottom: 1px solid black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    ul {
+        li {
+            a {
+
+                &:hover {
+                    background-color: transparent;
                     color: whitesmoke;
-                    cursor: pointer;
                 }
+            } 
+            
+            .header-name {
+                color: whitesmoke;
+                cursor: pointer;
             }
         }
-    }   
+    }
+
+    #logo {
+        font-size: 22px;
+        color: rgb(39, 37, 37);
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    
+}   
+
+
+.container {
+    margin-top: 50px;
 }
 
-#logo {
-    font-size: 22px;
-    color: rgb(39, 37, 37);
-    text-transform: uppercase;
-    text-decoration: none;
-}
 
-
-// footer
 .footer {
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    margin-top: 5rem;
+    margin-top: 150px;
     padding: 0 8%;
     border-top: .1rem solid rgb(185, 181, 181);
     color: rgb(31, 30, 30);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
 
     .box-container {
         display: grid;
@@ -92,18 +95,17 @@ body {
         }
          
     }
-}
 
-.credit {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    font-size: 2rem;
-    color: rgb(59, 62, 66);
-    background: linear-gradient(circle,rgba(238,174,202,1) 100%, rgba(148,187,233,1) 0%);
-
-    span {
-        color: var(--orange);
+    .credit {
+        text-align: center;
+        font-size: 2rem;
+        color: rgb(209, 211, 212);
+        background: linear-gradient(circle,rgba(238,174,202,1) 100%, rgba(148,187,233,1) 0%);
+    
+        span {
+            color: var(--orange);
+        }
     }
+    
+    
 }
-

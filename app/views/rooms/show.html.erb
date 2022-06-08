@@ -3,7 +3,7 @@
     <h4 class="text-center">The room has <%= pluralize @room.seats.count, "seat" %></h4>
     <h4 class="text-center">The cinema has <%= pluralize @room.showtimes.count, "showtime" %></h4>
 </div>
-
+<%= link_to "Create Seat", new_room_seat_path(@room) %> <br>
 <div>
     Lịch chiếu:
     <br/>
@@ -18,4 +18,3 @@ Chỗ ngồi:<br/>
     | <%= link_to "Edit", edit_room_seat_path(seat.room, seat) %>
     | <%= link_to "Delete seat", [seat.room, seat], method: :delete, data: {confirm: "You sure"} %><br>
 <% end %>
-<%= link_to "Create Seat", new_room_seat_path(@room) %> <br>
