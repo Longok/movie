@@ -4,7 +4,10 @@
 <%= @cinema.name %>
 <%= @cinema.year %>
 <%= @cinema.time %>
-
+Xuất chiếu:
+<% @cinema.showtimes.each do |showtime| %>
+    <%= link_to showtime.in_time, showtime_path(showtime) %> |
+<% end %>
 <br>
 <%= link_to "Edit", edit_cinema_path(@cinema) %>
 <%= link_to "Delete", @cinema, method: :delete, data: { confirm: "You are sure"} %>
