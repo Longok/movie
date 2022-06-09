@@ -1,13 +1,42 @@
-<h1>show movie</h1>
+<h4><%= @cinema.name %></h4>
 
-<%= image_tag @cinema.display_image if @cinema.image.attached? %>
-<%= @cinema.name %>
-<%= @cinema.year %>
-<%= @cinema.time %>
-Xuất chiếu:
-<% @cinema.showtimes.each do |showtime| %>
-    <%= link_to showtime.in_time, showtime_path(showtime) %> |
-<% end %>
-<br>
+<div class="detail">
+    <div class="box col-6">
+
+        <%= image_tag @cinema.display_image if @cinema.image.attached? %>
+
+        <div class="description">
+
+            <div class="name">
+                <%= @cinema.name %>
+            </div>
+
+            <div class="times">
+
+                <div class="minutes">
+                    <%= @cinema.time %> phút
+                </div>
+
+                <div class="years">
+                  Năm: <%= @cinema.year %>
+                </div>
+            </div>
+
+            <div class="showtimes">
+            Xuất chiếu:
+
+                <div class="showtime">
+                    <% @cinema.showtimes.each do |showtime| %>
+                        <%= link_to showtime.in_time, showtime_path(showtime) %>
+                    <% end %>
+                </div>   
+            </div>
+        </div> 
+
+    </div> 
+
+</div>
+
 <%= link_to "Edit", edit_cinema_path(@cinema) %>
 <%= link_to "Delete", @cinema, method: :delete, data: { confirm: "You are sure"} %>
+

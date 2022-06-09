@@ -1,6 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
 body {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -19,16 +20,18 @@ header {
 
     ul {
         li {
+
             a {
+                color: rgb(39, 37, 37);
 
                 &:hover {
-                    background-color: transparent;
+                    background: transparent !important;
                     color: whitesmoke;
                 }
             } 
             
             .header-name {
-                color: whitesmoke;
+                color: rgb(252, 249, 251);
                 cursor: pointer;
             }
         }
@@ -46,6 +49,76 @@ header {
 
 .container {
     margin-top: 50px;
+
+    .content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 1.5rem;
+
+        .box {
+
+            img {
+                width: 250px;
+                height: 350px;
+            }
+        }
+       
+    }
+
+    .detail {
+
+        .box {
+            display: flex;
+
+            img {
+                width: 250px;
+                height: 350px;
+            }
+
+            .name {
+                color: red;
+                padding-left: 10px;
+                font-size: 20px;
+            }
+
+            .times {
+                padding-left: 10px;
+                padding-top: 10px;
+                font-size: 18px;
+                display: flex;
+
+                .minutes {
+                    margin-right: 15px;
+                }
+            }
+
+            .showtimes {
+                padding-left: 10px;
+                padding-top: 10px;
+                font-size: 14px;
+                width: 100%;
+
+                .showtime {
+                    margin-top: 10px;
+
+                    a {
+                        width: 100%;
+                        border: 1px solid rgba(126, 121, 121, 0.9);
+                        text-decoration: none;
+                        padding: 0 4px;
+
+                        &:hover {
+                            color: rgb(252, 78, 15);
+                            background-color: black;
+                        }
+    
+                    }
+             
+                }
+                       
+            }
+        }
+    }
 }
 
 
@@ -105,7 +178,6 @@ header {
         span {
             color: var(--orange);
         }
-    }
-    
+    }   
     
 }
