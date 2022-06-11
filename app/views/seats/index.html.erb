@@ -1,8 +1,11 @@
-<h1>All seats</h1>
+<h4>Đặt chổ ngồi</h4>
 
+<div class="grid-container">
+        <% @seats.each do |seat| %>
+            <div class="grid-item">
 
-<% @seats.each do |seat| %>
+                <%= seat.name %> <br>
+            </div>
 
-    <%= seat.name %> <br>
-
-<% end %>
+        <% end %>
+</div>

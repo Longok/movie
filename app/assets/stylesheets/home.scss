@@ -119,6 +119,24 @@ header {
             }
         }
     }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 1.5rem;
+        background-color: #d0e0ec;
+        padding: 10px;
+    }
+      
+      .grid-item {
+        background-color: rgba(240, 151, 151, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+    }
 }
 
 

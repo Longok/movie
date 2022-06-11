@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_06_111814) do
+ActiveRecord::Schema.define(version: 2022_06_11_023221) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,10 +40,26 @@ ActiveRecord::Schema.define(version: 2022_06_06_111814) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.integer "cinema_id", null: false
+    t.integer "seat_id", null: false
+    t.integer "showtime_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cinema_id"], name: "index_bookings_on_cinema_id"
+    t.index ["seat_id"], name: "index_bookings_on_seat_id"
+    t.index ["showtime_id"], name: "index_bookings_on_showtime_id"
+  end
+
   create_table "cinemas", force: :cascade do |t|
     t.string "name"
     t.integer "year"
     t.integer "time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -81,6 +97,9 @@ ActiveRecord::Schema.define(version: 2022_06_06_111814) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "cinemas"
+  add_foreign_key "bookings", "seats"
+  add_foreign_key "bookings", "showtimes"
   add_foreign_key "seats", "rooms"
   add_foreign_key "showtimes", "rooms"
 end

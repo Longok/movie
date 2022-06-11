@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   end
   resources :showtimes
   resources :cinemas
+  resources :bookings
+
 end

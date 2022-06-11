@@ -1,10 +1,19 @@
-<br>
-<%= image_tag @showtime.cinema.display_image if @showtime.cinema.image.attached? %>
+<div class="content">
+    <div class="box">
+        <%= image_tag @showtime.cinema.display_image if @showtime.cinema.image.attached? %>
 
-<%= @showtime.cinema.name %>
-<%= @showtime.cinema.year %>
-<%= @showtime.cinema.time %>
-| Xuat chieu: <%= @showtime.time.strftime('%I: %M %p')  %> 
-| Rap: <%= @showtime.room_id %>
+        <%= @showtime.cinema.name %>
+        <%= @showtime.cinema.year %>
+        <%= @showtime.cinema.time %>
+        | Xuat chieu: <%= @showtime.time.strftime('%I: %M %p')  %> 
+        | Rap: <%= @showtime.room_id %>
+    </div>
+</div>
+Cho ngoi:
 
-<br>
+
+    <%= @showtime.room.name %>
+    <%= @showtime.room.seats.name %>
+
+    <%= @room.seats.name %>
+
