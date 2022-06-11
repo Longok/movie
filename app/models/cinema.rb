@@ -5,7 +5,6 @@ class Cinema < ApplicationRecord
     validates :name, presence: true, length: { minimum: 6}
     validates :year, presence: true, length: { minimum: 4}
     validates :time, presence: true, length: { minimum: 2}
-    validates :image, presence: true
 
 
     def display_image
