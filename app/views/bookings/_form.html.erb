@@ -1,0 +1,16 @@
+<%= form_for @booking do |f| %>
+
+    <%= render "shared/error_messages", object: @booking %>
+
+    <%= f.label :seat_id %>
+    <%= f.collection_select(:seat_id, Seat.all, :id, :name, class:"form-control") %>
+
+    <%= f.label :showtime_id %>
+    <%= f.collection_select(:showtime_id, Showtime.all, :id, :time, class:"form-control") %>
+    <br>
+    <%= f.label :cinema_id %>
+    <%= f.collection_select(:cinema_id, Cinema.all, :id, :name, class:"form-controll") %>
+
+    <%= f.submit "Booking", class:"btn btn-primary" %>
+
+<% end %>
