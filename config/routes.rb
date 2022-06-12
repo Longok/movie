@@ -11,10 +11,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :rooms do
-    resources :seats
+    resources :seats do
+      resources :bookings
+    end
   end
   resources :showtimes
   resources :cinemas
-  resources :bookings
 
 end

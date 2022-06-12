@@ -5,7 +5,10 @@ class BookingsController < ApplicationController
     end
 
     def new
-        @booking = Booking.new
+        # @booking = Booking.new
+        room = Room.find(params[:room_id])
+        seat = room.seats.find params[:seat_id]
+        @booking = seat.bookings.build
     end
 
 

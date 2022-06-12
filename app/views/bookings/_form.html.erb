@@ -3,7 +3,7 @@
     <%= render "shared/error_messages", object: @booking %>
 
     <%= f.label :seat_id %>
-    <%= f.collection_select(:seat_id, Seat.all, :id, :name, class:"form-control") %>
+    <%= f.text_field :seat_id, :value => @booking.seat_id, class:"form-control" %>
 
     <%= f.label :showtime_id %>
     <%= f.collection_select(:showtime_id, Showtime.all, :id, :time, class:"form-control") %>

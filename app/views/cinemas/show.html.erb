@@ -23,6 +23,12 @@
             </div>
 
             <div class="showtimes">
+            Lich chieu:
+                <div class="showtime">
+                    <% @cinema.showtimes.each do |showtime| %>
+                        <%= showtime.in_date %>
+                    <% end %>
+                </div>   
             Xuất chiếu:
 
                 <div class="showtime">

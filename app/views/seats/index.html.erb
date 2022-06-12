@@ -4,7 +4,7 @@
         <% @seats.each do |seat| %>
             <div class="grid-item">
 
-                <%= link_to seat.name, new_booking_path(seat) %> <br>
+                <%= link_to seat.name, new_room_seat_booking_path(seat) %> <br>
             </div>
 
         <% end %>
