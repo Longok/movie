@@ -1,6 +1,7 @@
-<%= form_for @cinema do |f| %>
+<%= form_for @film do |f| %>
 
-    <%= render "shared/error_messages", object: @cinema %>
+    <%= render "shared/error_messages", object: @film %>
+
     <%= f.label :name %>
     <%= f.text_field :name, class:"form-control" %>
 
@@ -13,6 +14,5 @@
     <%= f.label :image %>
     <%= f.file_field :image, class:"form-control" %>
     
-    <%= f.submit "Create movie", class:"btn btn-primary" %>
-
+    <%= f.submit "Create film", class:"btn btn-primary" %>
 <% end %>

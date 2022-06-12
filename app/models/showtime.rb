@@ -1,6 +1,7 @@
 class Showtime < ApplicationRecord
   belongs_to :room
-  belongs_to :cinema
+  belongs_to :film
+  has_many :bookings
 
   validates :time, presence: true, uniqueness: true
   validates :room_id, presence: true

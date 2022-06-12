@@ -1,0 +1,4 @@
+<div class="box">
+    <%= image_tag film.display_image if film.image.attached? %>
+    <%= link_to film.name, film_path(film) %> 
+</div>

@@ -8,8 +8,8 @@
     <%= f.label :room_id %>
     <%= f.collection_select(:room_id, Room.all, :id, :name, class:"form-control") %>
     <br>
-    <%= f.label :cinema_id %>
-    <%= f.collection_select(:cinema_id, Cinema.all, :id, :name, class:"form-controll") %>
+    <%= f.label :film_id %>
+    <%= f.collection_select(:film_id, Film.all, :id, :name, class:"form-controll") %>
 
     <%= f.submit "Create times", class:"btn btn-primary"  %>
 

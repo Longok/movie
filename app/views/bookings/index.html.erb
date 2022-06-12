@@ -1,7 +1,7 @@
 <% @bookings.each do |booking| %>
 
-    <%= booking.cinema.name %><br>
-    <%= booking.showtime.in_time %><br>
-    <%= booking.seat.name %><br><br>
+    <%= booking.showtime.film.name %><br>
+    <%= booking.seat.name %><br>
+    <%= booking.showtime.show_at %><br>
 
 <% end %>

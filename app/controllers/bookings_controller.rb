@@ -5,10 +5,7 @@ class BookingsController < ApplicationController
     end
 
     def new
-        # @booking = Booking.new
-        room = Room.find(params[:room_id])
-        seat = room.seats.find params[:seat_id]
-        @booking = seat.bookings.build
+        @booking = Booking.new
     end
 
 
@@ -29,6 +26,6 @@ class BookingsController < ApplicationController
 
     private
     def booking_params
-        params.require(:booking).permit :seat_id, :cinema_id, :showtime_id
+        params.require(:booking).permit :seat_id, :showtime_id
     end
 end

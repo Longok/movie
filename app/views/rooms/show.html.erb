@@ -1,7 +1,7 @@
 <div>
     <h1>Page Room: <%= @room.name %></h1>
     <h4 class="text-center">The room has <%= pluralize @room.seats.count, "seat" %></h4>
-    <h4 class="text-center">The cinema has <%= pluralize @room.showtimes.count, "showtime" %></h4>
+    <h4 class="text-center">The film has <%= pluralize @room.showtimes.count, "showtime" %></h4>
 </div>
 <%= link_to "Create Seat", new_room_seat_path(@room) %> <br>
 <div>
@@ -12,9 +12,13 @@
     <% end %>
 </div>
 <br/>
-Chỗ ngồi:<br/>
-<% @room.seats.each do |seat| %>
-    <%= link_to seat.name %>
-    | <%= link_to "Edit", edit_room_seat_path(seat.room, seat) %>
-    | <%= link_to "Delete seat", [seat.room, seat], method: :delete, data: {confirm: "You sure"} %><br>
-<% end %>
+Chỗ ngồi:
+<div class="grid-container">
+    <% @room.seats.each do |seat| %>
+        <div class="grid-item">
+            <%= link_to seat.name %>
+                | <%= link_to "Edit", edit_room_seat_path(seat.room, seat) %>
+                | <%= link_to "Delete seat", [seat.room, seat], method: :delete, data: {confirm: "You sure"} %>
+            </div>
+    <% end %>
+</div>

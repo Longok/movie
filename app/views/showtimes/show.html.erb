@@ -1,15 +1,15 @@
 <div class="content">
     <div class="box">
-        <%= image_tag @showtime.cinema.display_image if @showtime.cinema.image.attached? %>
+        <%= image_tag @showtime.film.display_image if @showtime.film.image.attached? %>
 
-        <%= @showtime.cinema.name %>
-        <%= @showtime.cinema.year %>
-        <%= @showtime.cinema.time %>
-        | Xuat chieu: <%= @showtime.time.strftime('%I: %M %p')  %> 
-        | Rap: <%= @showtime.room_id %>
+        <%= @showtime.film.name %>
+        <%= @showtime.film.year %>
+        <%= @showtime.film.time %>
+        | Xuất chiếu: <%= @showtime.time.strftime('%I: %M %p')  %> 
+        | Rạp: <%= @showtime.room_id %>
     </div>
 </div>
-Cho ngoi:
+Chổ ngồi:
 
 
     <%= @showtime.room.name %>

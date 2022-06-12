@@ -1,4 +1,5 @@
-class Cinema < ApplicationRecord
+class Film < ApplicationRecord
+
     has_many :showtimes
     has_one_attached :image
 

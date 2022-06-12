@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CinemasControllerTest < ActionDispatch::IntegrationTest
+class FilmTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

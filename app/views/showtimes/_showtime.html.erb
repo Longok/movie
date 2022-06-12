@@ -1,6 +1,6 @@
 <div class="box">
-    <%= image_tag showtime.cinema.display_image if showtime.cinema.image.attached? %>
-    <%= showtime.cinema.name %>
+    <%= image_tag showtime.film.display_image if showtime.film.image.attached? %>
+    <%= showtime.film.name %>
 
     | Lịch chiếu: <%= showtime.in_date %> | Xuất chiếu: <%= showtime.in_time %>
 

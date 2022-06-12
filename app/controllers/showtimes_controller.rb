@@ -27,6 +27,6 @@ class ShowtimesController < ApplicationController
     private
 
     def showtime_params
-        params.require(:showtime).permit :time, :room_id, :cinema_id
+        params.require(:showtime).permit :time, :room_id, :film_id
     end
 end

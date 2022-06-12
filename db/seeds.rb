@@ -64,27 +64,26 @@ end
 end
 
 # Movie
-cinema1 = Cinema.create!(name: "Bat Man",
+film1 = Film.create!(name: "Bat Man",
     year: "2021",
     time: "160"
 )
-cinema1.image.attach(io: File.open(Rails.root.join('app/assets/images/batman.jpg')), filename: 'batman.jpg')
+film1.image.attach(io: File.open(Rails.root.join('app/assets/images/batman.jpg')), filename: 'batman.jpg')
 
-cinema2 = Cinema.create!(name: "JURASSIC WORLD DOMINION",
+film2 = Film.create!(name: "JURASSIC WORLD DOMINION",
     year: "2022",
     time: "150"
 )
-cinema2.image.attach(io: File.open(Rails.root.join('app/assets/images/jura.jpg')), filename: 'jura.jpg')
+film2.image.attach(io: File.open(Rails.root.join('app/assets/images/jura.jpg')), filename: 'jura.jpg')
 
-cinema3 = Cinema.create!(name: "Trịnh Công Sơn",
+film3 = Film.create!(name: "Trịnh Công Sơn",
     year: "2022",
     time: "120"
 )
-cinema3.image.attach(io: File.open(Rails.root.join('app/assets/images/trinhcongson.jpg')), filename: 'trinhcongson.jpg')
+film3.image.attach(io: File.open(Rails.root.join('app/assets/images/trinhcongson.jpg')), filename: 'trinhcongson.jpg')
 
-cinema4 = Cinema.create!(name: "Spider Man",
+film4 = Film.create!(name: "Spider Man",
     year: "2022",
     time: "140"
 )
-cinema4.image.attach(io: File.open(Rails.root.join('app/assets/images/spiderman.jpg')), filename: 'spiderman.jpg')
-
+film4.image.attach(io: File.open(Rails.root.join('app/assets/images/spiderman.jpg')), filename: 'spiderman.jpg')

@@ -1,0 +1,41 @@
+<h4><%= @film.name %></h4>
+
+<div class="detail">
+    <div class="box col-6">
+
+        <%= image_tag @film.display_image if @film.image.attached? %>
+
+        <div class="description">
+
+            <div class="name">
+                <%= @film.name %>
+            </div>
+
+            <div class="times">
+
+                <div class="minutes">
+                    <%= @film.time %> phút
+                </div>
+
+                <div class="years">
+                  Năm: <%= @film.year %>
+                </div>
+            </div>
+
+            <div class="showtimes">
+            Xuất chiếu:
+
+                <div class="showtime">
+                    <% @film.showtimes.each do |showtime| %>
+                        <%= link_to showtime.in_time, room_seats_path(showtime) %>
+                    <% end %>
+                </div>   
+            </div>
+        </div> 
+
+    </div> 
+
+</div>
+
+<%= link_to "Edit", edit_film_path(@film) %>
+<%= link_to "Delete", @film, method: :delete, data: { confirm: "You are sure"} %>

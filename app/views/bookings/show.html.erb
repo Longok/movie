@@ -1,3 +1,3 @@
-<%= @booking.cinema.name %>
-<%= @booking.seat.name %>
-<%= @booking.showtime.in_time %>
+Tên phim: <%= @booking.showtime.film.name %><br>
+Chổ ngồi: <%= @booking.seat.name %><br>
+Xuất chiếu: <%= @booking.showtime.in_time %> - <%= @booking.showtime.in_date %>
