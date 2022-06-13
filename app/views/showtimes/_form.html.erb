@@ -2,15 +2,15 @@
 
     <%= render "shared/error_messages", object: @showtime %>
 
-    <%= f.label :time %>
-    <%= f.datetime_select :time, class:"form-control" %>
+    <%= f.label :time, "Chọn ngày giờ" %>
+    <%= f.datetime_local_field :time, class:"form-control" %>
     <br>
-    <%= f.label :room_id %>
+    <%= f.label :room_id, "Chọn phòng" %>
     <%= f.collection_select(:room_id, Room.all, :id, :name, class:"form-control") %>
     <br>
-    <%= f.label :film_id %>
+    <%= f.label :film_id, "Chọn phim" %>
     <%= f.collection_select(:film_id, Film.all, :id, :name, class:"form-controll") %>
 
-    <%= f.submit "Create times", class:"btn btn-primary"  %>
+    <%= f.submit "Tạo xuất chiếu", class:"btn btn-primary"  %>
 
 <% end %>

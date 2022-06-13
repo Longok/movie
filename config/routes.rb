@@ -13,8 +13,12 @@ Rails.application.routes.draw do
   resources :rooms do
     resources :seats 
   end
+
+  resources :seats do 
+    resources :bookings
+  end
+
   resources :showtimes
   resources :films
-  resources :bookings
 
 end

@@ -1,3 +1,9 @@
-Tên phim: <%= @booking.showtime.film.name %><br>
-Chổ ngồi: <%= @booking.seat.name %><br>
-Xuất chiếu: <%= @booking.showtime.in_time %> - <%= @booking.showtime.in_date %>
+<div class="content col-md-6 col-md-offset-3">
+    <div class="box">
+        <%= image_tag @booking.showtime.film.display_image if @booking.showtime.film.image.attached? %>
+        Tên phim: <%= @booking.showtime.film.name %><br>
+        Chổ ngồi: <%= @booking.seat.name %> | <%= @booking.showtime.room.name %><br>
+        Xuất chiếu: <%= @booking.showtime.in_time %> - <%= @booking.showtime.in_date %><br>
+        <%= button_to "Thanh toán" %>
+    </div>
+</div>

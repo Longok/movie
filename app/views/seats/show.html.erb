@@ -1,0 +1,6 @@
+Chổ ngồi: <%= @seat.name %>
+<%= @seat.room.name %>
+
+<br>
+<%= link_to "Xem thông tin", seat_booking_path(@seat, @booking.ids) %> | 
+<%= link_to "Thanh toán" %>

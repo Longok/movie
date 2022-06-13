@@ -11,7 +11,7 @@ class FilmsController < ApplicationController
     def create
         @film = Film.new film_params
         if @film.save
-            flash[:info] = "Create film successfully"
+            flash[:info] = "Tạo phim thành công"
             redirect_to @film
         else
             render :new
@@ -29,7 +29,7 @@ class FilmsController < ApplicationController
     def update
         @film = Film.find params[:id]
         if @film.update film_params
-            flash[:info] = "Update film successfully"
+            flash[:info] = "Cập nhật phim thành công"
             redirect_to @film
         else
             render :edit
@@ -39,7 +39,7 @@ class FilmsController < ApplicationController
     def destroy
         @film = Film.find params[:id]
         @film.destroy
-        flash[:info] = "Delete movie successfully"
+        flash[:info] = "Xóa phim thành công"
         redirect_to @film
     end
 

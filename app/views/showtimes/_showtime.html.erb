@@ -1,9 +1,11 @@
 <div class="box">
     <%= image_tag showtime.film.display_image if showtime.film.image.attached? %>
     <%= showtime.film.name %>
+    <br>
+    Xuất chiếu: <%= showtime.in_time %> - <%= showtime.in_date %>
 
-    | Lịch chiếu: <%= showtime.in_date %> | Xuất chiếu: <%= showtime.in_time %>
-
-    | <%= link_to showtime.room.name, room_path(showtime.room) %>
-
+    <%= link_to showtime.room.name, room_path(showtime.room) %>
+    <br>
+    <%= link_to "Sửa", edit_showtime_path(showtime) %> |
+    <%= link_to "Xóa", showtime, method: :delete, data: {confirm: "Xác nhận xóa"} %>
 </div>   

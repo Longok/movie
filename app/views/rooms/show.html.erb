@@ -1,5 +1,5 @@
 <div>
-    <h1>Page Room: <%= @room.name %></h1>
+    <h1><%= @room.name %></h1>
     <h4 class="text-center">The room has <%= pluralize @room.seats.count, "seat" %></h4>
     <h4 class="text-center">The film has <%= pluralize @room.showtimes.count, "showtime" %></h4>
 </div>
@@ -16,9 +16,9 @@ Chỗ ngồi:
 <div class="grid-container">
     <% @room.seats.each do |seat| %>
         <div class="grid-item">
-            <%= link_to seat.name %>
-                | <%= link_to "Edit", edit_room_seat_path(seat.room, seat) %>
-                | <%= link_to "Delete seat", [seat.room, seat], method: :delete, data: {confirm: "You sure"} %>
+            <%= link_to seat.name %><br>
+                <%= link_to "Sửa", edit_room_seat_path(seat.room, seat) %>
+                | <%= link_to "Xóa", [seat.room, seat], method: :delete, data: {confirm: "Xác nhận xóa"} %>
             </div>
     <% end %>
 </div>

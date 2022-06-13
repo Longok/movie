@@ -6,12 +6,13 @@ class ShowtimesController < ApplicationController
 
     def new
         @showtime = Showtime.new
+        
     end
 
     def create
         @showtime = Showtime.new showtime_params
         if @showtime.save
-            flash[:info] = "Create times successfully"
+            flash[:info] = "Tạo xuất chiếu thành công"
             redirect_to @showtime
 
         else
@@ -22,6 +23,27 @@ class ShowtimesController < ApplicationController
     def show
         @showtime = Showtime.find params[:id]
         @room = Room.find params[:id]
+    end
+
+    def edit 
+        @showtime = Showtime.find params[:id]
+    end
+
+    def update
+        @showtime = Showtime.find params[:id]
+        if @showtime.update showtime_params
+            flash[:info] = "Cập nhật xuất chiếu thành công"
+            redirect_to @showtime
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        @showtime = Showtime.find params[:id]
+        @showtime.destroy
+        flash[:info] = "Xóa xuất chiếu thành công"
+        redirect_to @showtime
     end
 
     private

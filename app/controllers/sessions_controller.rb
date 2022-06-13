@@ -7,12 +7,10 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by email: params[:session][:email].downcase
     if user &.authenticate(params[:session][:password])
-      flash[:info] = 'ok'
-
       log_in user
       redirect_to user
     else
-      flash[:danger] = 'Invalid email/password combination'
+      flash[:danger] = 'Email/Mật khẩu không hợp lệ'
       render :new
     end
   end

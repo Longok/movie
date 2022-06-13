@@ -1,4 +1,4 @@
-<h4><%= @film.name %></h4>
+<h4>Film |</h4>
 
 <div class="detail">
     <div class="box col-6">
@@ -37,5 +37,5 @@
 
 </div>
 
-<%= link_to "Edit", edit_film_path(@film) %>
-<%= link_to "Delete", @film, method: :delete, data: { confirm: "You are sure"} %>
+<%= link_to "Sửa", edit_film_path(@film) %>
+<%= link_to "Xóa", @film, method: :delete, data: { confirm: "Xác nhận xóa"} %>

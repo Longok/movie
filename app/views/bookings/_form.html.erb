@@ -1,12 +1,11 @@
-<%= form_for @booking do |f| %>
+<%= form_for ([@booking.seat, @booking]) do |f| %>
 
     <%= render "shared/error_messages", object: @booking %>
+    
+    <%= f.hidden_field :seat_id, :value => @booking.seat_id, class:"form-control" %>
 
-    <%= f.label :seat_id %>
-    <%= f.text_field :seat_id, :value => @booking.seat_id, class:"form-control" %>
-
-    <%= f.label :showtime_id %>
+    <%= f.label :showtime_id, "Chọn xuất chiếu" %>
     <%= f.collection_select(:showtime_id, Showtime.all, :id, :time, class:"form-control") %>
 
-    <%= f.submit "Booking", class:"btn btn-primary" %>
+    <%= f.submit "Đặt vé", class:"btn btn-primary" %>
 <% end %>

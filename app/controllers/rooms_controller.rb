@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
     def create
         @room = Room.new room_params
         if @room.save
-            flash[:info] = "Create room successfully"
+            flash[:info] = "Tạo phòng thành công"
             redirect_to @room
         else
             render :new
@@ -26,7 +26,7 @@ class RoomsController < ApplicationController
     def destroy
         @room = Room.find_by id: params[:id]
         @room.destroy 
-        flash[:info] = "Delete room successfully"
+        flash[:info] = "Xóa phòng thành công"
         redirect_to @room
     end
 
