@@ -27,13 +27,13 @@
 
                 <div class="showtime">
                     <% @film.showtimes.each do |showtime| %>
-                        <%= link_to showtime.in_time, room_seats_path(showtime) %>
+                        <%= link_to showtime.in_time, new_showtime_bookings_path(showtime) %>
                     <% end %>
-                </div>   
+                </div>
             </div>
-        </div> 
+        </div>
 
-    </div> 
+    </div>
 
 </div>
 

@@ -8,7 +8,7 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true, length: {minimum: 4}, format: {with: EMAIL_REGEX}
 
     has_secure_password
-    
+
     def User.digest string
         cost = if ActiveModel::SecurePassword.min_cost
                     BCrypt::Engine::MIN_COST
@@ -16,5 +16,9 @@ class User < ApplicationRecord
                     BCrypt::Engine.cost
                 end
         BCrypt::Password.create string, cost: cost
+    end
+
+    def admin?
+        self.email == ''
     end
 end

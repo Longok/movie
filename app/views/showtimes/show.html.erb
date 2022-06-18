@@ -5,13 +5,13 @@
         <%= @showtime.film.name %>
         <%= @showtime.film.year %>
         <%= @showtime.film.time %><br>
-        Xuất chiếu: <%= @showtime.time.strftime('%I: %M %p')  %> 
+        Xuất chiếu: <%= @showtime.time.strftime('%I: %M %p')  %>
         | Rạp: <%= @showtime.room_id %>
         <br>
         Chổ ngồi:
         <%= @showtime.room.seats.name %>
         <%= @room.seats.name %>
-    
+
     </div>
 </div>
 

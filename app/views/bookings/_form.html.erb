@@ -1,11 +1,17 @@
-<%= form_for ([@booking.seat, @booking]) do |f| %>
+<%= form_with model: @booking, url: showtime_bookings_path do |f| %>
 
     <%= render "shared/error_messages", object: @booking %>
-    
-    <%= f.hidden_field :seat_id, :value => @booking.seat_id, class:"form-control" %>
 
-    <%= f.label :showtime_id, "Chọn xuất chiếu" %>
-    <%= f.collection_select(:showtime_id, Showtime.all, :id, :time, class:"form-control") %>
+    <%= f.hidden_field :seat_id, value: @booking.seat_id, class:"form-control" %>
+
+    <h4>Đặt chổ ngồi:</h4>
+    <div class="grid-container">
+        <% @seats.each do |seat| %>
+            <div class="grid-item choose-seat <%= 'booked' if seat.booked %>" data-id="<%= seat.id %>">
+                <span><%= seat.name %></span>
+            </div>
+        <% end %>
+    </div>
 
     <%= f.submit "Đặt vé", class:"btn btn-primary" %>
 <% end %>
