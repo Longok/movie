@@ -6,28 +6,22 @@ class BookingsController < ApplicationController
     end
 
     def new
-        seat = Seat.find(params[:seat_id])
-        showtime = Showtime.find_by id: params[:showtime_id]
-        @booking = seat.bookings.build
+        @showtime = Showtime.find params[:showtime_id]
+        @booking = @showtime.bookings.build
+        @seats = Seat.by_showtime(@showtime.id)
     end
 
 
     def create
-        seat = Seat.find(params[:seat_id])
-        showtime = Showtime.find_by id: (params[:showtime_id])
-        @booking = seat.bookings.create booking_params
-        if seat && showtime
-            flash[:danger] = "Ghế ngồi đã tồn tại"
+        @showtime = Showtime.find params[:showtime_id]
+        @booking = @showtime.bookings.new(booking_params)
+        if  @booking.save
+            flash[:info] = "Đặt chổ ngồi thành công"
+            redirect_to showtime_booking_path(@booking, showtime_id: @showtime.id)
+        else
+            flash[:danger] = "Đặt chổ ngồi thất bại"
+            @seats = Seat.by_showtime(@showtime.id)
             render :new
-
-        else    
-            if  @booking.save
-                flash[:info] = "Đặt chổ ngồi thành công"
-                redirect_to @booking.seat                
-            else
-                flash[:danger] = "Đặt chổ ngồi thất bại"
-                render :new
-            end
         end
     end
 
@@ -36,7 +30,8 @@ class BookingsController < ApplicationController
     end
 
     private
+
     def booking_params
-        params.require(:booking).permit :seat_id, :showtime_id
+        params.require(:booking).permit :seat_id
     end
 end

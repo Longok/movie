@@ -8,6 +8,18 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+require('jquery')
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$( document ).ready(function() {
+  $("form .choose-seat").click(function() {
+    $("form .choose-seat").removeClass('active');
+    $('#booking_seat_id').val($(this).data("id"));
+
+    $(this).addClass('active');
+  });
+});
+

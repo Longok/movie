@@ -11,14 +11,16 @@ Rails.application.routes.draw do
 
   resources :users
   resources :rooms do
-    resources :seats 
+    resources :seats
   end
 
-  resources :seats do 
+  resources :seats do
     resources :bookings
   end
 
-  resources :showtimes
+  resources :showtimes do # showtimes/:showtime_id/bookings
+    resources :bookings
+  end
   resources :films
 
 end
