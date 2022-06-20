@@ -1,3 +1,25 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+  .grid-item {
+    background-color: #949494;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 6rem;
+    width: 6rem;
+    
+    a {
+        font-size: 1.4rem;
+    }
+ }

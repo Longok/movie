@@ -4,14 +4,14 @@
 
     <%= f.hidden_field :seat_id, value: @booking.seat_id, class:"form-control" %>
 
-    <h4>Đặt chổ ngồi:</h4>
-    <div class="grid-container">
+    <div class="grid-booking">
         <% @seats.each do |seat| %>
-            <div class="grid-item choose-seat <%= 'booked' if seat.booked %>" data-id="<%= seat.id %>">
-                <span><%= seat.name %></span>
+            <div class="grid-item choose-seat" data-id="<%= seat.id %>">
+                <%= seat.name %>
             </div>
         <% end %>
     </div>
 
-    <%= f.submit "Đặt vé", class:"btn btn-primary" %>
+    <%= f.submit "Đặt vé", class:"btn btn-primary", id:"submit" %>
+
 <% end %>

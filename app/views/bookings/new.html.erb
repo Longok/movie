@@ -1,6 +1,37 @@
-<h4>Form đặt ghế:</h4>
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+<h3>Chọn ghế </h3>
+
+    <div class="col-md-5">
         <%= render "form" %>
+    </div>
+
+    <div class="col-md-7 booking">
+
+        <div class="seat-select">
+
+            <div>
+                <div class="available"></div>
+                <span>Có sẵn</span>
+            </div>
+            <div>
+                <div class="sold"></div>
+                <span>Đã đặt</span>
+            </div>
+            <div>
+                <div class="selected"></div>
+                <span>Chưa đặt</span>
+            </div>
+        </div>
+
+        <div class="content-booking">
+            <div><%= image_tag @showtime.film.display_image if @showtime.film.image.attached? %></div>
+            <span>Phim: <%= @showtime.film.name %></span>
+            <span>Xuất chiếu: <%= @showtime.in_time %></span>
+            <span>Ngày chiếu: <%= @showtime.in_date %></span>
+            <span>Giá vé: 50.000đ </span>
+            <span>Chổ ngồi: 
+                <span class="show-seat"></span> 
+            </span>
+        </div>
     </div>
 </div>

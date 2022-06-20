@@ -22,7 +22,6 @@ class ShowtimesController < ApplicationController
 
     def show
         @showtime = Showtime.find params[:id]
-        @room = Room.find params[:id]
     end
 
     def edit 
