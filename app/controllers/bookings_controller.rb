@@ -1,8 +1,7 @@
 class BookingsController < ApplicationController
 
     def index
-        seat = Seat.find params[:seat_id]
-        @bookings = seat.bookings
+        @bookings = Booking.all
     end
 
     def new
@@ -14,8 +13,9 @@ class BookingsController < ApplicationController
 
     def create
         @showtime = Showtime.find params[:showtime_id]
-        @booking = @showtime.bookings.new(booking_params)
-        if  @booking.save
+        @booking = @showtime.bookings.new(booking_params)  
+        if 
+            @booking.save
             flash[:info] = "Đặt chổ ngồi thành công"
             redirect_to showtime_booking_path(@booking, showtime_id: @showtime.id)
         else
@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
             @seats = Seat.by_showtime(@showtime.id)
             render :new
         end
+
     end
 
     def show
@@ -32,6 +33,6 @@ class BookingsController < ApplicationController
     private
 
     def booking_params
-        params.require(:booking).permit :seat_id
+        params.require(:booking).permit :seat_id, :showtime_id
     end
 end

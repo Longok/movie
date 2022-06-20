@@ -18,47 +18,47 @@ User.create!(name: "Long Huynh",
 end
 
 # Seat
-20.times do |n|
+40.times do |n|
     name = "A"
     room_id = "1"
 
-    Seat.create!(name: "#{name}-#{n+1}",
+    Seat.create!(name: "#{name}#{n+1}",
         room_id: room_id
     )
 end
 
-20.times do |n|
+40.times do |n|
     name = "B"
     room_id = "2"
 
-    Seat.create!(name: "#{name}-#{n+1}",
+    Seat.create!(name: "#{name}#{n+1}",
         room_id: room_id
     )
 end
 
-20.times do |n|
+40.times do |n|
     name = "C"
     room_id = "3"
 
-    Seat.create!(name: "#{name}-#{n+1}",
+    Seat.create!(name: "#{name}#{n+1}",
         room_id: room_id
     )
 end
 
-20.times do |n|
+40.times do |n|
     name = "D"
     room_id = "4"
 
-    Seat.create!(name: "#{name}-#{n+1}",
+    Seat.create!(name: "#{name}#{n+1}",
         room_id: room_id
     )
 end
 
-20.times do |n|
+40.times do |n|
     name = "E"
     room_id = "5"
 
-    Seat.create!(name: "#{name}-#{n+1}",
+    Seat.create!(name: "#{name}#{n+1}",
         room_id: room_id
     )
 end
@@ -87,3 +87,15 @@ film4 = Film.create!(name: "Spider Man",
     time: "140"
 )
 film4.image.attach(io: File.open(Rails.root.join('app/assets/images/spiderman.jpg')), filename: 'spiderman.jpg')
+
+#Showtime
+10.times do |n|
+    time = Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long)
+    room_id = rand(1..5)
+    film_id = rand(1..4)
+
+    Showtime.create!(time: time,
+        room_id: room_id,
+        film_id: film_id
+    )
+end

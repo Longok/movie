@@ -244,6 +244,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   faker (~> 2.20)
   figaro
+  i18n
   image_processing (= 1.12.1)
   jbuilder (~> 2.7)
   listen (~> 3.3)

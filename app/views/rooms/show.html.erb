@@ -13,12 +13,13 @@
 </div>
 <br/>
 Chỗ ngồi:
-<div class="grid-container">
-    <% @room.seats.each do |seat| %>
-        <div class="grid-item">
-            <%= link_to seat.name %><br>
-                <%= link_to "Sửa", edit_room_seat_path(seat.room, seat) %>
-                | <%= link_to "Xóa", [seat.room, seat], method: :delete, data: {confirm: "Xác nhận xóa"} %>
+<div class="col-8 col-offset-3">
+    <div class="grid-container">
+        <% @room.seats.each do |seat| %>
+            <div class="grid-item">
+                <%= link_to seat.name, edit_room_seat_path(seat.room, seat) %>
+                   
             </div>
-    <% end %>
+        <% end %>
+    </div>
 </div>

@@ -1,6 +1,8 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 $primary-color: #fff;
 $background-color: #1b2a49;
@@ -202,19 +204,22 @@ header {
                 padding-top: 1rem;
                 font-size: 1.4rem;
                 width: 100%;
-
+            
                 .showtime {
                     margin-top: 1rem;
-
+                    
                     a {
                         width: 100%;
                         border: 1px solid rgba(126, 121, 121, 0.9);
                         text-decoration: none;
-                        padding: 0 .4rem;
+                        font-size: 1.6rem;
+                        padding: .5rem;
+                        border-radius: .4rem;
 
                         &:hover {
                             color: $text-hover;
                             background-color: black;
+                            border-radius: .4rem;
                         }
 
                     }
@@ -225,31 +230,92 @@ header {
         }
     }
 
-    .grid-container {
+    .grid-booking {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
         gap: 1.5rem;
         padding: 1rem;
+        place-items: center;
     }
 
       .grid-item {
-        background-color: rgba(240, 151, 151, 0.8);
+        background-color: #949494;
         border: 1px solid rgba(0, 0, 0, 0.8);
-        padding: 1rem;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+        line-height: 3.5rem;
         text-align: center;
         cursor: pointer;
         border-radius: 5px;
+        height: 4rem;
+        width: 4rem;
 
-        a {
-            text-decoration: none;
+        &.active {
+            background-color: #00B70C;
+        }        
+        
+        .booked {
+            background-color: #D00000;
+            cursor: not-allowed;
+        }
+    }
+
+    .booking {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .seat-select {
+            display: flex;   
+
+            div {
+                display: flex;
+                margin-right: 1rem;
+                padding: 1rem 0;
+                border-radius: .5rem;
+                align-items: center;
+                
+                .available {
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: #949494;
+                }
+                .sold {
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: #D00000;
+                }
+                .selected {
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: #00B70C;
+                }
+            }
+            
+        }
+
+        .content-booking {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            div {
+
+                width: 30rem;
+
+                img {
+                    border-radius: 1rem;
+                    width: 100%;
+                    height: 15rem;
+                }
+            }
+            span {
+                padding: .5rem;
+            }
         }
     }
 }
 
-.active {
-    background-color: rgb(7, 88, 61) !important;
-}
+
 
 .footer {
     background-color: $background-color;
