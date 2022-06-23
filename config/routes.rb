@@ -14,9 +14,13 @@ Rails.application.routes.draw do
     resources :seats
   end
 
-  resources :showtimes do # showtimes/:showtime_id/bookings
-    resources :bookings
+  resources :showtimes do
+    resources :bookings 
   end
   resources :films
+
+  resources :bookings do
+    resources :payments
+  end
 
 end

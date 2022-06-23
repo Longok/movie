@@ -253,7 +253,7 @@ header {
             background-color: #00B70C;
         }        
         
-        .booked {
+        &.booked {
             background-color: #D00000;
             cursor: not-allowed;
         }
@@ -313,6 +313,52 @@ header {
             }
         }
     }
+
+    .ticket {
+        position: relative;
+        box-sizing: border-box;
+        width: 30rem;
+        height: 45rem;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 1rem;
+        background: #FBFBFB;
+        box-shadow: .2rem .2rem 1.2rem 0 #AB9B0D;
+        display: flex;
+        
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          left: .5rem;
+          height: .6rem;
+          width: 29rem;
+        }
+        
+        &:before {
+          top: -.5rem;
+          background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100% ) -.7rem -.8rem / 1.6rem 1.6rem repeat-x,
+        }
+        
+        &:after {
+          bottom: -.5rem;
+          background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100% ) -.7rem -.2rem / 1.6rem 1.6rem repeat-x,
+        }
+        
+        .ticket__content {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            padding-left: 20%;
+
+            p {
+                padding-top: 1.2rem;
+            }
+        }
+    }
+      
+   
+    
 }
 
 

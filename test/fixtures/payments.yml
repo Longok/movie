@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking: one
+  user: one
+  code: MyString
+  payment_type: MyString
+  cash_number: 1
+
+two:
+  booking: two
+  user: two
+  code: MyString
+  payment_type: MyString
+  cash_number: 1

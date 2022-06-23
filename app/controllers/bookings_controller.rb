@@ -6,10 +6,9 @@ class BookingsController < ApplicationController
 
     def new
         @showtime = Showtime.find params[:showtime_id]
-        @booking = @showtime.bookings.build
+        @booking = @showtime.bookings.where('showtime_id').build
         @seats = Seat.by_showtime(@showtime.id)
     end
-
 
     def create
         @showtime = Showtime.find params[:showtime_id]

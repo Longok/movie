@@ -3,7 +3,7 @@
         <%= image_tag @booking.showtime.film.display_image if @booking.showtime.film.image.attached? %>
         Tên phim: <%= @booking.showtime.film.name %><br>
         Chổ ngồi: <%= @booking.seat.name %> | <%= @booking.showtime.room.name %><br>
-        Xuất chiếu: <%= @booking.showtime.in_time %> - <%= @booking.showtime.in_date %><br>
-        <%= button_to "Thanh toán" %>
+        Xuất chiếu: <%= @booking.showtime.in_time %> - <%= @booking.showtime.in_date %><br>      
+        <%= link_to "Thanh toán", new_booking_payment_path(@booking), class:"btn btn-success" %>  
     </div>
 </div>

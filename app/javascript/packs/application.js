@@ -22,11 +22,7 @@ $(document).ready(function() {
 
     $(".show-seat").empty();
     $(".show-seat").append( $(this).val($(this).data("id")).text());
-
-    $("#submit").click(function() {
-      $(".choose-seat").addClass("booked");
-    });
-  
+    
   });
   
 

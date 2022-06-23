@@ -12,4 +12,6 @@ class Seat < ApplicationRecord
       .select('seats.*, CASE WHEN bookings.id NOTNULL THEN TRUE ELSE FALSE END AS booked')
       .where("showtimes.id = :showtime_id", showtime_id: showtime_id)
   }
+
+ 
 end

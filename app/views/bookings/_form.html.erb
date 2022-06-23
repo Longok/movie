@@ -6,12 +6,26 @@
 
     <div class="grid-booking">
         <% @seats.each do |seat| %>
-            <div class="grid-item choose-seat" data-id="<%= seat.id %>">
+            <% if seat.status == true %>
+            <div class="grid-item choose-seat booked" data-id="<%= seat.id %>">
                 <%= seat.name %>
             </div>
+
+            <% else %>
+
+            <div class="grid-item choose-seat " data-id="<%= seat.id %>">
+                <%= seat.name %>
+            </div>
+
+            <% end %>
+
         <% end %>
     </div>
 
-    <%= f.submit "Đặt vé", class:"btn btn-primary", id:"submit" %>
+    <% if logged_in %>
+        <%= f.submit "Đặt vé", class:"btn btn-primary", id:"submit" %>
+    <% else %>
+        <%= link_to "Đặt vé", login_path, class:"btn btn-primary" %>
+    <% end %>
 
 <% end %>
