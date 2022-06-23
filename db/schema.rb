@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_12_115900) do
+ActiveRecord::Schema.define(version: 2022_06_23_120526) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -57,6 +57,18 @@ ActiveRecord::Schema.define(version: 2022_06_12_115900) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.integer "booking_id", null: false
+    t.integer "user_id", null: false
+    t.string "code"
+    t.string "payment_type"
+    t.integer "cash_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_payments_on_booking_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
   create_table "rooms", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -92,6 +104,8 @@ ActiveRecord::Schema.define(version: 2022_06_12_115900) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "seats"
   add_foreign_key "bookings", "showtimes"
+  add_foreign_key "payments", "bookings"
+  add_foreign_key "payments", "users"
   add_foreign_key "seats", "rooms"
   add_foreign_key "showtimes", "rooms"
 end

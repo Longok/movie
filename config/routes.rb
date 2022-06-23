@@ -19,4 +19,8 @@ Rails.application.routes.draw do
   end
   resources :films
 
+  resources :bookings do
+    resources :payments
+  end
+
 end

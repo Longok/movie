@@ -1,0 +1,9 @@
+<div class="col-md-6 col-md-offset-3">
+    <h3>Thông tin vé</h3>
+    Mã code: <%= @payment.code %><br>
+    Tên phim: <%= @payment.booking.showtime.film.name %><br>
+    Xuất chiếu: <%= @payment.booking.showtime.in_time %> | <%= @payment.booking.showtime.in_date %><br>
+    Số ghế: <%= @payment.booking.seat.name %><br>
+    Thành tiền: <%= number_with_delimiter(@payment.cash_number) %> đ
+</div>
+

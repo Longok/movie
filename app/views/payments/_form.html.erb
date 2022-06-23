@@ -1,0 +1,18 @@
+<%= form_with model: @payment, url: booking_payments_path do |f| %>
+
+    <%= render "shared/error_messages", object: @payment %>
+
+    <%= f.hidden_field :booking_id, value: @payment.booking_id, class:"form-control" %>
+
+    <%= f.label :code, "Mã code" %>
+    <%= f.text_field :code, value:[*'a'..'z', *0..9, *'A'..'Z'].shuffle[0...8].join, class:"form-control" %>
+
+    <%= f.label :cash_number, "Số tiền" %>
+    <%= f.text_field :cash_number, class:"form-control" %>
+
+    <%= f.label :payment_type, "Chọn kiểu thanh toán" %>
+    <%= f.select :payment_type, Payment::PAYMENT_TYPE, class:"form-control" %>
+
+    <%= f.submit "Thanh toán", class:"btn btn-primary" %>
+
+<% end %>

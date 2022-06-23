@@ -1,0 +1,25 @@
+<h3>Danh sách khách hàng đã đặt</h3>
+
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Tên khách hàng</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phim</th>
+            <th scope="col">Ngày đặt</th>
+            <th scope="col">Thanh toán</th>
+        </tr>
+    </thead>
+    <% @payments.each do |payment| %>
+
+        <tbody>
+            <tr> 
+                <th><%= payment.user.name %></th>
+                <th><%= payment.user.email %></th>
+                <th><%= payment.booking.showtime.film.name %></th>
+                <th><%= payment.created_at.strftime('%d-%m-%Y') %></th>
+                <th><%= payment.payment_type %></th>
+            </tr>
+        </tbody>
+    <% end %>
+</table>
