@@ -8,7 +8,7 @@
             <p>Tên phim: <%= @payment.booking.showtime.film.name %></p>
             <p>Xuất chiếu: <%= @payment.booking.showtime.in_time %></p>
             <p>Ngày chiếu: <%= @payment.booking.showtime.in_date %></p>
-            <p>Số ghế: <%= @payment.booking.seat.name %></p>
+            <p>Số ghế: <%= @payment.booking.seat.name %> | <%= @payment.booking.seat.room.name %></p>
             <p>Thành tiền: <%= number_with_delimiter(@payment.cash_number) %> đ</p>
         </div>
     </div>

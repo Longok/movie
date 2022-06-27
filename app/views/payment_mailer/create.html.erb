@@ -1,0 +1,14 @@
+
+  <h1>MOVIE-APP XIN CHÀO !! <%= @user.name %></h1>
+  <h2>Bạn đã đặt vé thành công</h2>
+  <p>CHI TIẾT VÉ XEM PHIM</p>
+  -------------------------------</br>
+  <%= image_tag @svg %>
+  <p>Mã code: <%= @payment.code %></p>
+  <p>Tên phim: <%= @payment.booking.showtime.film.name %></p>
+  <p>Xuất chiếu: <%= @payment.booking.showtime.in_time %> - <%= @payment.booking.showtime.in_date %></p>
+  <p>Số ghế: <%= @payment.booking.seat.name %> | <%= @payment.booking.seat.room.name %></p>
+  <p>Thành tiền: <%= number_with_delimiter(@payment.cash_number) %> đ</p>
+  --------------------------------</br>
+  <p>Cảm ơn bạn đã ủng hộ chúng tôi, chúc bạn một ngày tuyệt vời !</p>
+

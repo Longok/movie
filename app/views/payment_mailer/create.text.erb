@@ -1,0 +1,12 @@
+
+  MOVIE-APP XIN CHÀO
+  <%= @user.name %>, bạn đã đặt vé thành công
+  CHI TIẾT VÉ XEM PHIM
+  -------------------------------
+  Mã code: <%= @payment.code %>
+  Tên phim: <%= @payment.booking.showtime.film.name %>
+  Xuất chiếu: <%= @payment.booking.showtime.in_time %> - <%= @payment.booking.showtime.in_date %>
+  Số ghế: <%= @payment.booking.seat.name %> |  <%= @payment.booking.seat.room.name %>
+  Thành tiền: <%= number_with_delimiter(@payment.cash_number) %> đ
+  --------------------------------
+  Cảm ơn bạn đã ủng hộ chúng tôi, chúc bạn một ngày tuyệt vời !

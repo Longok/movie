@@ -6,6 +6,7 @@
             <th scope="col">Tên khách hàng</th>
             <th scope="col">Email</th>
             <th scope="col">Phim</th>
+            <th scope="col">Code</th>
             <th scope="col">Ngày đặt</th>
             <th scope="col">Thanh toán</th>
         </tr>
@@ -17,6 +18,7 @@
                 <th><%= payment.user.name %></th>
                 <th><%= payment.user.email %></th>
                 <th><%= payment.booking.showtime.film.name %></th>
+                <th><%= payment.code %></th>
                 <th><%= payment.created_at.strftime('%d-%m-%Y') %></th>
                 <th><%= payment.payment_type %></th>
             </tr>
