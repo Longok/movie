@@ -15,6 +15,7 @@ Turbolinks.start()
 ActiveStorage.start()
 
 $(document).ready(function() {
+
   $("form .choose-seat").click(function() {
     $(".choose-seat").removeClass("active");
     $("#booking_seat_id").val($(this).data("id"));
@@ -24,7 +25,10 @@ $(document).ready(function() {
     $(".show-seat").append( $(this).val($(this).data("id")).text());
     
   });
-  
-
 });
 
+$(document).ready(function() {
+  $('.slider').carousel({
+    interval: 10000
+  });
+});

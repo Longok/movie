@@ -5,11 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(name: "Long Huynh",
-    email: "admin@gmail.com",
-    password: "123123",
-    password_confirmation: "123123"
-)
+# User.create!(name: "Long Huynh",
+#     email: "admin@gmail.com",
+#     password: "123123",
+#     password_confirmation: "123123"
+# )
+
+
+5.times do |n| 
+    name = "longtest#{n+1}",
+    email = "longtest-#{n+1}@gmail.com",
+    password = "123123"
+
+    User.create!(name: name,
+        email: email,
+        password: password,
+        password_confirmation: password
+    )
+end
 
 # Room
 5.times do |n|
@@ -99,3 +112,4 @@ film4.image.attach(io: File.open(Rails.root.join('app/assets/images/spiderman.jp
         film_id: film_id
     )
 end
+AdminUser.create!(email: 'admin@gmail.com', password: '123123', password_confirmation: '123123') if Rails.env.development?

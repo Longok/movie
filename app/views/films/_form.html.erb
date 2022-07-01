@@ -1,16 +1,11 @@
 <%= form_for @film do |f| %>
-
     <%= render "shared/error_messages", object: @film %>
-
     <%= f.label :name, "Tên phim" %>
     <%= f.text_field :name, class:"form-control" %>
-
     <%= f.label :year, "Năm phát hành" %>
     <%= f.text_field :year, class:"form-control" %>
-
     <%= f.label :time, "Thời lượng" %>
     <%= f.text_field :time, class:"form-control" %>
-
     <%= f.label :image, "Hình ảnh" %>
     <%= f.file_field :image, class:"form-control" %>
     
