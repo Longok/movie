@@ -8,5 +8,6 @@
   Xuất chiếu: <%= @payment.booking.showtime.in_time %> - <%= @payment.booking.showtime.in_date %>
   Số ghế: <%= @payment.booking.seat.name %> |  <%= @payment.booking.seat.room.name %>
   Thành tiền: <%= number_with_delimiter(@payment.cash_number) %> đ
+  Ngày đặt: <%= @payment.created_at %>
   --------------------------------
   Cảm ơn bạn đã ủng hộ chúng tôi, chúc bạn một ngày tuyệt vời !

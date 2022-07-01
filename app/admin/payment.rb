@@ -6,9 +6,10 @@ ActiveAdmin.register Payment do
       column :id
       column :booking_id
       column "Tên", :user.name
+      column "Mã code", :code
       column "Hình thức thanh toán", :payment_type
       column "Số tiền", :cash_number
-      column "Ngày tạo", :created_at
+      column "Ngày đặt", :created_at
       actions
     end
   

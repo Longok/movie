@@ -9,6 +9,7 @@
   <p>Xuất chiếu: <%= @payment.booking.showtime.in_time %> - <%= @payment.booking.showtime.in_date %></p>
   <p>Số ghế: <%= @payment.booking.seat.name %> | <%= @payment.booking.seat.room.name %></p>
   <p>Thành tiền: <%= number_with_delimiter(@payment.cash_number) %> đ</p>
+  <p>Ngày đặt: <%= @payment.created_at.strftime('%I: %M %p %d-%m-%Y') %></p>
   --------------------------------</br>
   <p>Cảm ơn bạn đã ủng hộ chúng tôi, chúc bạn một ngày tuyệt vời !</p>
 

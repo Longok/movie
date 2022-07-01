@@ -13,8 +13,8 @@ User.create!(name: "admin",
 
 
 5.times do |n| 
-    name = "longtest#{n+1}",
-    email = "longtest-#{n+1}@gmail.com",
+    name = "longtest#{n+1}"
+    email = "longtest-#{n+1}@gmail.com"
     password = "123123"
 
     User.create!(name: name,
