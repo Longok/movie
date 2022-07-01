@@ -4,12 +4,12 @@ ActiveAdmin.register Film do
   index do
     selectable_column
     column :id
-    column :name
-    column "Image" do |film|
+    column "Tên phim", :name
+    column "Hình ảnh" do |film|
       image_tag film.display_image, class: 'my_image_size'
       end
-    column :year
-    column :time
+    column "Năm phát hành", :year
+    column "Thời lượng", :time
     actions
   end
 

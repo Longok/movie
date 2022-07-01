@@ -21,6 +21,6 @@ class User < ApplicationRecord
     end
 
     def admin?
-        self.email == 'admin@gmail.com'
+        self.email == 'longadmin@gmail.com'
     end
 end

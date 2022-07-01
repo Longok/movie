@@ -1,4 +1,5 @@
 class FilmsController < ApplicationController
+    before_action :logged_in_admin, only: [:new, :create]
 
     def index
         @films = Film.all
