@@ -14,8 +14,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-$(document).ready(function() {
-
+document.addEventListener("turbolinks:load", function() {
   $("form .choose-seat").click(function() {
     $(".choose-seat").removeClass("active");
     $("#booking_seat_id").val($(this).data("id"));
@@ -27,8 +26,10 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
-  $('.slider').carousel({
-    interval: 10000
-  });
+jQuery(window).on('scroll', function() {
+  if(jQuery(window).scrollTop() > 50) {
+      jQuery('.header-active').css('background-color', '#0a1e5e');
+  } else {
+     jQuery('.header-active').css('background-color', 'transparent');
+  }
 });

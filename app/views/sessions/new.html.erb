@@ -1,17 +1,15 @@
 <h1>Đăng nhập</h1>
 
-<div class="col-md-6 col-md-offset-3">
+<div class="login col-md-6 col-md-offset-3">
 
     <%= form_with url: login_path, scope: :session do |f| %>
 
-        <%= f.label :email %>
-        <%= f.email_field :email, class:"form-control" %>
+        <%= f.email_field :email, class:"form-control", placeholder: "Email" %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password, class:"form-control" %>
+        <%= f.password_field :password, class:"form-control", placeholder: "Mật khẩu" %>
 
         <%= f.submit "Đăng nhập", class: "btn btn-primary" %>
     <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", 'sign-up' %></p>
+    <p><%= link_to "Đăng ký tài khoản?", 'sign-up' %></p>
 </div>

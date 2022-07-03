@@ -36,6 +36,8 @@
     </div>
 
 </div>
-
-<%= link_to "Sửa", edit_film_path(@film) %>
-<%= link_to "Xóa", @film, method: :delete, data: { confirm: "Xác nhận xóa"} %>
+<% if logged_in && current_user.admin? %>
+    <%= link_to "Sửa", edit_film_path(@film) %> |
+    <%= link_to "Xóa", @film, method: :delete, data: { confirm: "Xác nhận xóa"} %> | 
+    <%= link_to "Tạo xuất chiếu", new_showtime_path %>
+<% end %>

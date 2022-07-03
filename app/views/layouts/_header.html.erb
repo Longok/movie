@@ -1,5 +1,5 @@
 
-<header>
+<header class="header-active">
 
   <div class="header">
 
@@ -23,18 +23,18 @@
 
   </div>
 
-</header>
 
-<div class="navigation">
+  <div class="navbar">
   
-  <ul>
-    <li><%= link_to "Home", '/' %></li>
-    <li><%= link_to "Sự kiện", '#' %></li>
-    <li><%= link_to "Hổ trợ", '#' %></li>
-    <li><%= link_to "Rạp", rooms_path %></li>
-    <li><%= link_to "Xuất chiếu", showtimes_path %></li>
-    <li><%= link_to "Phim", films_path %></li>
-    <li><%= link_to "Mua vé" %></li>
-  </ul>
+    <ul>
+      <li><%= link_to "Home", '/' , class:"active" %></li>
+      <li><%= link_to "Phim", films_path %></li>
+      <li><%= link_to "Tin tức", '#news' %></li>
+      <li><%= link_to "Review", '#review' %></li>
+      <li><%= link_to "Hổ trợ", '#' %></li>
+      <li><%= link_to "Mua vé"  %></li>
+    </ul>
   
-</div>
+  </div>
+
+</header>

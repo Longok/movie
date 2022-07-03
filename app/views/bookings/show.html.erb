@@ -1,9 +1,13 @@
-<div class="content col-md-6 col-md-offset-3">
+<div class="payment col-md-6 col-md-offset-3">
     <div class="box">
-        <%= image_tag @booking.showtime.film.display_image if @booking.showtime.film.image.attached? %>
-        Tên phim: <%= @booking.showtime.film.name %><br>
-        Chổ ngồi: <%= @booking.seat.name %> | <%= @booking.showtime.room.name %><br>
-        Xuất chiếu: <%= @booking.showtime.in_time %> - <%= @booking.showtime.in_date %><br>      
-        <%= link_to "Thanh toán", new_booking_payment_path(@booking), class:"btn btn-success" %>  
-    </div>
+        <div class="image">
+            <%= image_tag @booking.showtime.film.display_image if @booking.showtime.film.image.attached? %>  
+        </div>
+        <div class="content">
+            <p><span>Tên phim:</span> <%= @booking.showtime.film.name %></p>
+            <p><span>Chổ ngồi:</span> <%= @booking.seat.name %> | <%= @booking.showtime.room.name %></p>
+            <p><span>Xuất chiếu:</span> <%= @booking.showtime.in_time %> - <%= @booking.showtime.in_date %></p>      
+        </div>
+    </div>    
+    <%= link_to "Thanh toán", new_booking_payment_path(@booking), class:"btn btn-success" %>  
 </div>

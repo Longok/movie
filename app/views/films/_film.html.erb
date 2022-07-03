@@ -1,4 +1,9 @@
 <div class="box">
-    <%= image_tag film.display_image if film.image.attached? %>
-    <%= link_to film.name, film_path(film) %> 
+        <div class="image">
+                <%= image_tag film.display_image if film.image.attached? %>
+        </div>
+        <div class="content">
+                <%= link_to film.name, film_path(film) %> 
+                <p><%= film.time %> phút</p>
+        </div>
 </div>

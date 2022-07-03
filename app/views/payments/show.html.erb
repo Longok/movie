@@ -1,8 +1,9 @@
-<div class="col-md-6 col-md-offset-3">
-<h1>Thông tin vé</h1>
-
-    <div class="ticket">
-        <div class="ticket__content">
+<div class="ticket col-md-6 col-md-offset-3">
+    <div class="info">
+        <h1>Thông tin vé</h1>
+    </div>
+    <div class="content">
+        <div class="ticket_detail">
             <%= @svg.html_safe %>
             <p>Mã code: <%= @payment.code %></p>
             <p>Tên phim: <%= @payment.booking.showtime.film.name %></p>

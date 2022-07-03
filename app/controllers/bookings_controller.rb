@@ -7,7 +7,11 @@ class BookingsController < ApplicationController
     def new
         @showtime = Showtime.find params[:showtime_id]
         @booking = @showtime.bookings.where('showtime_id').build
-        @seats = Seat.by_showtime(@showtime.id)
+        @seats1 = Seat.by_showtime(@showtime.id).limit(8)
+        @seats2 = Seat.by_showtime(@showtime.id).limit(8).offset(8)
+        @seats3 = Seat.by_showtime(@showtime.id).limit(8).offset(16)
+        @seats4 = Seat.by_showtime(@showtime.id).limit(8).offset(24)
+        @seats5 = Seat.by_showtime(@showtime.id).limit(8).offset(32)
     end
 
     def create

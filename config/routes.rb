@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'home#index'
 
+  get '/titket', to: "home#show_titket"
+
   get '/sign-up', to: "users#new"
   post '/sign-up', to: "users#create"
 

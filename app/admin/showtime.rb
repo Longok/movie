@@ -1,5 +1,5 @@
 ActiveAdmin.register Showtime do
-    permit_params :time, :room, :film
+    permit_params :time, :room_id, :film_id
   
     index do
       selectable_column
