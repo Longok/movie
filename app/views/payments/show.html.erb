@@ -4,7 +4,7 @@
     </div>
     <div class="content">
         <div class="ticket_detail">
-            <%= @svg.html_safe %>
+            <%= @payment.generate_qr_code.html_safe %>
             <p>Mã code: <%= @payment.code %></p>
             <p>Tên phim: <%= @payment.booking.showtime.film.name %></p>
             <p>Xuất chiếu: <%= @payment.booking.showtime.in_time %></p>
@@ -15,4 +15,3 @@
     </div>
 
 </div>
-       

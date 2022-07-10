@@ -11,7 +11,7 @@ class Seat < ApplicationRecord
            LEFT JOIN bookings ON bookings.showtime_id = showtimes.id AND bookings.seat_id = seats.id")
       .select('seats.*, CASE WHEN bookings.id NOTNULL THEN TRUE ELSE FALSE END AS booked')
       .where("showtimes.id = :showtime_id", showtime_id: showtime_id)
+      .order(:id)
   }
 
- 
 end

@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-    
+
 
     def index
         @payments = Payment.all.order("id DESC")
@@ -18,6 +18,7 @@ class PaymentsController < ApplicationController
             PaymentMailer.with(user: current_user, payment: @payment).create.deliver_now
             @payment.update_status
             flash[:info] = "Cảm ơn bạn đã đặt vé xem phim tại Movie App"
+            session[:lasted_payment_id] = @payment.id
             redirect_to booking_payment_path( @booking, @payment )
         else
             flash[:danger] = "Thanh toán thất bại"
@@ -27,13 +28,6 @@ class PaymentsController < ApplicationController
 
     def show
         @payment = Payment.find params[:id]
-        qr_code = RQRCode::QRCode.new(@payment.code)
-        @svg = qr_code.as_svg(
-            offset: 0,
-            color: '000',
-            shape_rendering: 'crispEdges',
-            module_size: 6
-          )
     end
 
     private
