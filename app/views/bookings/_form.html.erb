@@ -1,106 +1,32 @@
 <%= form_with model: @booking, url: showtime_bookings_path do |f| %>
 
-    <%= render "shared/error_messages", object: @booking %>
+  <%= render "shared/error_messages", object: @booking %>
 
-    <%= f.hidden_field :seat_id, value: @booking.seat_id, class:"form-control" %>
+  <%= f.hidden_field :seat_id, value: @booking.seat_id, class:"form-control" %>
 
-    <div class="grid-booking">
-        <div class="screen"></div>
-        <div class="row">
-            <% @seats1.each do |seat| %>
-                <% if seat.status == true %>
-                    <div class="grid-item choose-seat booked" data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% else %>
-
-                    <div class="grid-item choose-seat " data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% end %>
-
-            <% end %>
-        </div>
-        <div class="row">
-
-            <% @seats2.each do |seat| %>
-                <% if seat.status == true %>
-                    <div class="grid-item choose-seat booked" data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% else %>
-
-                    <div class="grid-item choose-seat " data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% end %>
-
-            <% end %>
-        </div>
-        <div class="row">
-
-            <% @seats3.each do |seat| %>
-                <% if seat.status == true %>
-                    <div class="grid-item choose-seat booked" data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% else %>
-
-                    <div class="grid-item choose-seat " data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% end %>
-
-            <% end %>
-        </div>
-        <div class="row">
-
-            <% @seats4.each do |seat| %>
-                <% if seat.status == true %>
-                    <div class="grid-item choose-seat booked" data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% else %>
-
-                    <div class="grid-item choose-seat " data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% end %>
-
-            <% end %>
-        </div>
-        <div class="row">
-
-            <% @seats5.each do |seat| %>
-                <% if seat.status == true %>
-                    <div class="grid-item choose-seat booked" data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% else %>
-
-                    <div class="grid-item choose-seat " data-id="<%= seat.id %>">
-                        <%= seat.name %>
-                    </div>
-
-                <% end %>
-
-            <% end %>
-        </div>
-    </div>
-
-    <% if logged_in %>
-        <%= f.submit "Đặt vé", class:"btn btn-primary", id:"submit" %>
-    <% else %>
-        <%= link_to "Đặt vé", login_path, class:"btn btn-success" %>
+  <div class="grid-booking">
+    <div class="screen"></div>
+    <% @seats.each_slice(8) do |items| %>
+      <div class="row">
+        <% items.each do |seat| %>
+          <% if seat.booked && seat.status == true %>
+            <div class="grid-item choose-seat booked" data-id="<%= seat.id %>">
+                <%= seat.name %>
+            </div>
+          <% else %>
+            <div class="grid-item choose-seat " data-id="<%= seat.id %>">
+                <%= seat.name %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
+  </div>
+
+  <% if logged_in %>
+    <%= f.submit "Đặt vé", class:"btn btn-primary", id:"submit" %>
+  <% else %>
+    <%= link_to "Đặt vé", login_path, class:"btn btn-success" %>
+  <% end %>
 
 <% end %>

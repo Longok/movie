@@ -9,16 +9,17 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 require("jquery")
-
+// = require cloudinary
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
 document.addEventListener("turbolinks:load", function() {
   $("form .choose-seat").click(function() {
-    $(".choose-seat").removeClass("active");
+    // $(".choose-seat").removeClass("active");
     $("#booking_seat_id").val($(this).data("id"));
-    $(this).addClass("active");
+    // $(this).addClass("active");
+    $(this).toggleClass("active");
 
     $(".show-seat").empty();
     $(".show-seat").append( $(this).val($(this).data("id")).text());

@@ -2,7 +2,7 @@ class FilmsController < ApplicationController
     before_action :logged_in_admin, only: [:new, :create]
 
     def index
-        @films = Film.all
+        @films = Film.all.order("id DESC")
     end
 
     def new

@@ -27,4 +27,6 @@ Rails.application.routes.draw do
     resources :payments
   end
 
+ post 'checkout/create', to: "checkout#create", as: "checkout_create"
+ 
 end

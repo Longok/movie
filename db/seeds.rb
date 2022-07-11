@@ -113,3 +113,4 @@ film4.image.attach(io: File.open(Rails.root.join('app/assets/images/spiderman.jp
     )
 end
 AdminUser.create!(email: 'admin@gmail.com', password: '123123', password_confirmation: '123123') if Rails.env.production?
+# AdminUser.create!(email: 'admin@gmail.com', password: '123123', password_confirmation: '123123') if Rails.env.development?

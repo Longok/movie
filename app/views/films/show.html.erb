@@ -23,14 +23,14 @@
             </div>
 
             <div class="showtimes">
-            Xuất chiếu:
-
+                Xuất chiếu:
                 <div class="showtime">
                     <% @film.showtimes.each do |showtime| %>
                         <%= link_to showtime.in_time, new_showtime_booking_path(showtime) %>
                     <% end %>
                 </div>
-            </div>
+                
+            </div>            
         </div>
 
     </div>

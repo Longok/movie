@@ -7,7 +7,7 @@
     <%= f.label :time, "Thời lượng" %>
     <%= f.text_field :time, class:"form-control" %>
     <%= f.label :image, "Hình ảnh" %>
-    <%= f.file_field :image, class:"form-control" %>
+    <%= f.file_field :image, direct_upload: true , class:"form-control" %>
     
     <%= f.submit "Tạo phim", class:"btn btn-primary" %>
 <% end %>

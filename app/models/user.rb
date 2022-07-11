@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_many :payments
-    
+
     before_save { self.email = email.downcase }
 
     validates :name, presence: true
@@ -22,5 +22,9 @@ class User < ApplicationRecord
 
     def admin?
         self.email == 'longadmin@gmail.com'
+    end
+
+    after_create do
+        Stripe::Customer.create(email: self.email)
     end
 end

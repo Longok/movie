@@ -17,7 +17,7 @@ ActiveAdmin.register Film do
     f.inputs "Tạo phim mới" do
       f.input :name
       f.inputs do 
-        f.input :image, as: :file
+        f.input :image, direct_upload: true , as: :file
       end
       f.input :year
       f.input :time
