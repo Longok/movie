@@ -2,7 +2,7 @@
 
   <%= render "shared/error_messages", object: @booking %>
 
-  <%= f.hidden_field :seat_id, value: @booking.seat_id, class:"form-control" %>
+  <%= f.hidden_field :seat_id, value: [@booking.seat_id], class:"form-control" %>
 
   <div class="grid-booking">
     <div class="screen"></div>

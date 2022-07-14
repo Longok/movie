@@ -25,7 +25,7 @@ gem 'faker', '~> 2.20'
 # gem 'will_paginate', '~> 3.3'
 gem 'kaminari'
 gem "bootstrap-will_paginate", '1.0.0'
-gem 'figaro'
+
 gem "image_processing", "1.12.1"
 gem "mini_magick", "4.9.5"
 gem "active_storage_validations", "0.8.2"
@@ -38,6 +38,9 @@ gem 'devise'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'stripe'
 gem 'cloudinary'
+gem "font-awesome-sass", "~> 6.1.1"
+gem "figaro"
+gem "pagy", "~> 5.10"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -72,3 +75,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+

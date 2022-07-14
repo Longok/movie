@@ -4,4 +4,7 @@
     <div class="movie-item">
         <%= render @films %> 
     </div>
+    <div id="load_more">
+        <%= link_to "Xem thêm", pagy_url_for(@pagy, @pagy.next) %>
+    </div>
 </section>

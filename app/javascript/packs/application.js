@@ -27,10 +27,19 @@ document.addEventListener("turbolinks:load", function() {
   });
 });
 
+// Scroll screen
 jQuery(window).on('scroll', function() {
   if(jQuery(window).scrollTop() > 50) {
       jQuery('.header-active').css('background-color', '#0a1e5e');
   } else {
      jQuery('.header-active').css('background-color', 'transparent');
   }
+});
+
+// Toggle navbar mobie
+document.addEventListener("turbolinks:load", function() {
+  const menuBtn = document.querySelector('#menu-btn');  
+  menuBtn.addEventListener('click', function(){
+    $(".navbar").toggleClass("active");
+  });
 });

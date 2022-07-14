@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     include SessionsHelper
+    include Pagy::Backend #scroll load page
 
     def logged_in_admin
         unless logged_in && current_user.admin?
