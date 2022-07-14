@@ -2,7 +2,7 @@ class FilmsController < ApplicationController
     before_action :logged_in_admin, only: [:new, :create]
 
     def index
-        @films = Film.all.order("id DESC")
+        @films = Film.with_attached_image.order("id DESC")
     end
 
     def new
@@ -42,6 +42,10 @@ class FilmsController < ApplicationController
         @film.destroy
         flash[:info] = "Xóa phim thành công"
         redirect_to @film
+    end
+
+    def search
+        @films = Film.where("name LIKE ?", "%" + params[:q] + "%")
     end
 
     private

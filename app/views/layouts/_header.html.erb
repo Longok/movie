@@ -8,29 +8,34 @@
     </div>
 
     <div class="search">
-      <input type="search" id="search-box"  name="keywords" placeholder="Tìm tên phim...">
-      <label for="search-box"></label>
+      <form action="/search">
+        <input type="text" id="search-box"  name="q" placeholder="Tìm tên phim...">
+        <label for="search-box"></label>
+      </form>
     </div>
-
+  
     <ul class="login">
+      <i class="fas fa-bars" id="menu-btn"></i>
+
       <% if logged_in %>
-        <li><a class="header-name"><%= @current_user.name %> | </a></li>
-        <li><%= link_to "Thoát", logout_path, method: :delete %></li>
+        <li class="name-login">
+          <a class="header-name"><%= @current_user.name %></a>
+          <%= link_to "Thoát", logout_path, method: :delete %>
+        </li>
       <% else %>
-        <li><%= link_to "Đăng nhập", login_path %></li>
+        <li><%= link_to "Đăng nhập", login_path, class:"login-text" %></li>
+        <li><%= link_to "" , login_path, class:"fas fa-user" %></li>
       <% end %>
     </ul>
 
   </div>
 
-
   <div class="navbar">
-
-    <ul>
-      <li><%= link_to "Home", '/' , class:"active" %></li>
+    <ul >
+      <li><%= link_to "Trang chủ", '/' , class:"active" %></li>
       <li><%= link_to "Phim", films_path %></li>
       <li><%= link_to "Tin tức", '#news' %></li>
-      <li><%= link_to "Review", '#review' %></li>
+      <li><%= link_to "Đánh giá", '#review' %></li>
       <li><%= link_to "Hổ trợ", '#' %></li>
       <li><%= link_to "Mua vé", '/titket'  %></li>
     </ul>

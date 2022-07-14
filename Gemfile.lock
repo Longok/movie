@@ -122,6 +122,8 @@ GEM
     ffi (1.15.5)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
+    font-awesome-sass (6.1.1)
+      sassc (~> 2.0)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
     formtastic_i18n (0.7.0)
@@ -331,6 +333,7 @@ DEPENDENCIES
   devise
   faker (~> 2.20)
   figaro
+  font-awesome-sass (~> 6.1.1)
   i18n
   image_processing (= 1.12.1)
   jbuilder (~> 2.7)

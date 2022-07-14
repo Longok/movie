@@ -1,0 +1,1 @@
+Stripe.api_key = ENV["ST_SECRET_KEY"]

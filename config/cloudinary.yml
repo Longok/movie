@@ -1,20 +1,20 @@
 development:
   cloud_name: movie237-herokuapp-com
-  api_key: '667468647672555'
-  api_secret: YtnpKiPgYjmk5IFFGhYZDcW2XmM
+  api_key: ENV["CL_API_KEY"]
+  api_secret: ENV["CL_API_SECRET"]
   enhance_image_tag: true
   static_file_support: false
   
 production:
   cloud_name: movie237-herokuapp-com
-  api_key: '667468647672555'
-  api_secret: YtnpKiPgYjmk5IFFGhYZDcW2XmM
+  api_key: ENV["CL_API_KEY"]
+  api_secret: ENV["CL_API_SECRET"]
   enhance_image_tag: true
   static_file_support: true
 
 test:
   cloud_name: movie237-herokuapp-com
-  api_key: '667468647672555'
-  api_secret: YtnpKiPgYjmk5IFFGhYZDcW2XmM
+  api_key: ENV["CL_API_KEY"]
+  api_secret: ENV["CL_API_SECRET"]
   enhance_image_tag: true
   static_file_support: false

@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   end
 
  post 'checkout/create', to: "checkout#create", as: "checkout_create"
+ get 'search', to: "films#search"
  
 end
