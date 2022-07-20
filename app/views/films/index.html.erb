@@ -5,6 +5,6 @@
         <%= render @films %> 
     </div>
     <div id="load_more">
-        <%= link_to "Xem thêm", pagy_url_for(@pagy, @pagy.next) %>
+        <%= raw pagy_nav(@pagy) %>
     </div>
 </section>
