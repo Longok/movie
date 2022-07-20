@@ -4,7 +4,6 @@ class FilmsController < ApplicationController
     def index
         # @films = Film.with_attached_image.order("id DESC")
         @pagy, @films = pagy(Film.with_attached_image.order("id DESC"), items: 8)
-   
     end
 
     def new
