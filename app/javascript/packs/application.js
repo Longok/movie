@@ -15,16 +15,19 @@ Turbolinks.start()
 ActiveStorage.start()
 
 document.addEventListener("turbolinks:load", function() {
-  $("form .choose-seat").click(function() {
-    // $(".choose-seat").removeClass("active");
-    $("#booking_seat_id").val($(this).data("id"));
-    // $(this).addClass("active");
+  var seats = [];
+  $(".choose-seat").click(function() {
+    var getId = $("#booking_seat_id").val($(this).data("id")).val();  
+    seats.push(getId);
+    // console.log(seats);
+    // alert(seats);
+    
     $(this).toggleClass("active");
-
-    $(".show-seat").empty();
+    
     $(".show-seat").append( $(this).val($(this).data("id")).text());
     
   });
+   
 });
 
 // Scroll screen
