@@ -1,8 +1,8 @@
-<div class="ticket col-md-6 col-md-offset-3">
+<div class="ticket col-md-6 offset-md-3 fs-3">
     <div class="info">
         <h1>Thông tin vé</h1>
     </div>
-    <div class="content">
+    <div class="content d-flex justify-content-center align-items-center">
         <div class="ticket_detail">
             <%= @payment.generate_qr_code.html_safe %>
             <p>Mã code: <%= @payment.code %></p>

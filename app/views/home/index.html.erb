@@ -1,6 +1,7 @@
 <h3>Phim mới</h3>
 
 <section class="movie">
+
     <div class="movie-item">
         <%= render @films %> 
     </div>
@@ -9,14 +10,15 @@
         <%= raw pagy_nav(@pagy) %>
     </div>
 
+
 </section>
 
 <h3>Tin tức</h3>
 
-<section class="news" id="news">
-    <div class="conteiner">
+<section class="news w-100" id="news">
+    
         <div class="row">
-            <div class="col-md-8 col-sm-12">
+            <div class="col-12 col-md-8">
             
                 <div class="article">
                     <div class="post-item">
@@ -128,12 +130,12 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-12">
+            <div class="col-12 col-md-4">
                 <div class="aside">
-                    <div class="widget widget-search">
+                    <div class="widget widget-search fs-4">
                         <h2>Tìm kiếm</h2>
                         <input type="search" id="search-box"  name="keywords" placeholder="Nhập để tìm kiếm">
-                        <div class="button-search">
+                        <div class="button-search d-flex justify-content-center align-items-center mt-4">
                             <h6>Tìm kiếm</h6>
                         </div>
                     </div>
@@ -141,12 +143,12 @@
                         <h2>Bài viết mới nhất</h2>
                        
                         <div class="post-image">
-                            <%= image_tag "post01.jpg" %>
+                            <%= image_tag "post01.jpg", class:"w-100" %>
                         </div>
 
-                        <div class="post-content">
+                        <div class="post-content mt-4">
                             <h4>Three Ways to Book Sporting Event Tickets</h4>
-                            <div class="meta-post">
+                            <div class="meta-post d-flex">
                                 <p><i class="fa-solid fa-comment"></i> 20 Comments</p> 
                                 <p><i class="fa-solid fa-eye"></i> 466 View </p>
                             </div>
@@ -187,14 +189,14 @@
                 </div>
             </div>
         </div>
-    </div>
+  
 </section>
 
 <h3>Đánh giá</h3>
 
 <section class="review" id="review">
 
-    <div class="review-item">
+    <div class="review-item fs-4">
 
         <div class="box">
             <%= image_tag "avt1.png" %>

@@ -1,8 +1,8 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-@import "bootstrap-sprockets";
-@import "bootstrap";
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
 @import "font-awesome";
 @import url('//fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;300;400;500;600&display=swap');
 
@@ -58,33 +58,20 @@ html {
     }
 }
   
-
-
 header {
     padding: 0 8%;
     margin-top: -.5rem;
     height: 9rem;
     background-color: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
     border-bottom: .1rem solid rgba(255, 255, 255, 0.102);
 
     .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
+        
         .logo {
-            padding-top: 1rem;
-            width: 30rem;
+            width: 24rem;
 
             img {
                 height: 6rem;
-                width: 100%;
-                padding-bottom: 1.6rem;
             }
         }
 
@@ -92,8 +79,6 @@ header {
             position: relative;
             height: 3rem;
             background: none;
-            display: flex;
-            align-items: center;
             border-radius: 50%;
             color: #00B70C;
             
@@ -122,15 +107,12 @@ header {
         }
 
         .login {
+
             list-style: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 1rem;
+
             a {
                 text-decoration: none;
                 color: rgba(206, 197, 197, 0.9);
-
             }
 
             .header-name {
@@ -145,25 +127,23 @@ header {
             .fa-user {
                 padding-left: .5rem;
                 color: #00B70C;
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
         }
     }
 
     .navbar {
         height: 4rem;
-        padding: 0 15%;
         margin-top: -1.4rem;
-
+        overflow: hidden;
+        
         i {
             display: none;
         }
 
         ul {
-            display: flex;
-            justify-content: space-between;
+        
             line-height: 4rem;
-            margin-bottom: 0;
             cursor: pointer;
             list-style: none;
             
@@ -242,7 +222,7 @@ header {
             justify-content: center;
 
             .static-text {
-                font-size: 7rem;
+                font-size: 6rem;
                 color: $primary-color;
                 position: relative;
                 font-weight: 800;
@@ -258,7 +238,7 @@ header {
                 
                 li {
                     list-style: none;
-                    font-size: 7rem;
+                    font-size: 6rem;
                     font-weight: 800;
                     line-height: 10rem;
                     height: 12rem;
@@ -298,7 +278,7 @@ header {
                             }
                             
                             30%, 60% {
-                                width: 253.63px;
+                                width: 24rem;
                             }          
                         }            
                 }
@@ -505,16 +485,19 @@ header {
                
 
                 .showtime {
+
                     margin-top: 1rem;
+                    padding: 1rem;
 
                     a {
-                        width: 100%;
                         border: 1px solid rgba(126, 121, 121, 0.9);
                         text-decoration: none;
                         font-size: 1.6rem;
                         border-radius: .4rem;
                         color: rgb(144, 176, 247);
                         padding: .5rem;
+                        margin-bottom: .2rem;
+
                         &:hover {
                             color: $text-hover;
                             background-color: black;
@@ -525,13 +508,13 @@ header {
             }
         }
     }
-
    
     .grid-booking {
+
         .screen {
             background: $primary-color;
             height: 7rem;
-            width: 80%;
+            width: 66%;
             transform: rotateX(-45deg);
             box-shadow: 0 2rem 3rem rgba(255,255,255,0.7);
             display: flex;
@@ -554,7 +537,7 @@ header {
                 cursor: pointer;
                 height: 4rem;
                 width: 4rem;
-                margin: 0 .6rem;
+                margin: 0 .2rem;
                 border-top-left-radius: 2rem;
                 border-top-right-radius: 2rem;
         
@@ -569,16 +552,13 @@ header {
                 }
 
                 &:nth-of-type(2) {
-                    margin-right: 3rem;
+                    margin-right: 2.5rem;
                 }
 
                 &:nth-last-of-type(2) {
-                    margin-left: 3rem;
+                    margin-left: 2rem;
                 }
-            }
-
-          
-    
+            }   
         }
         
     }  
@@ -685,9 +665,6 @@ header {
             border-radius: 1rem;
             background: #FBFBFB;
             box-shadow: .5rem .5rem 5rem 0 rgb(144, 176, 247);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             
             &:before,
             &:after {
@@ -739,8 +716,7 @@ header {
                         border-radius: .7rem;
                     }
                 }
-    
-    
+      
                 .post-content {
     
                     padding: 1rem 2rem;
@@ -749,7 +725,8 @@ header {
                         color: $primary-color;
                         font-size: 2.5rem;
                         line-height: 1.5;
-    
+                        margin-top: 2rem;
+
                         &:hover {
                             color: #00B70C;
                         }
@@ -858,6 +835,7 @@ header {
         .paginate {
 
             font-size: 2rem;
+            margin-bottom: 1.5rem;
 
             span {
                 margin: 0 1.5rem;
@@ -916,11 +894,7 @@ header {
                         color: #ffffff;
                         height: 4rem;
                         border-radius: 2rem;
-                        margin-top: 2rem;
                         background-image: -webkit-linear-gradient(169deg, #5560ff 17%, #aa52a1 63%, #ff4343 100%);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
                         cursor: pointer;
 
                         h6 {
@@ -937,7 +911,7 @@ header {
                         transition-delay: 1s;
 
                         img {
-                            border-radius: 1rem;                     
+                            border-radius: 1rem;              
                         }
                         
                         @keyframes scroll_post {
@@ -948,14 +922,12 @@ header {
                     }
 
                     .post-content {
-                        margin-top: 2rem;
 
                         h4 {
                             color: $primary-color;
                         }
 
                         .meta-post {                         
-                            display: flex;
                             
                             p {
                                 font-size: 1.6rem;
@@ -987,10 +959,8 @@ header {
                             }
                            
                         }
-
-                       
-                    }
-                  
+                   
+                    }                 
             }
         }
     }
@@ -1054,9 +1024,6 @@ header {
             }
 
             .social-icons {
-                display: flex;
-                justify-content: start;
-                align-items: center;
                 margin: 0;
                 padding: 0;
                 list-style: none;
@@ -1079,13 +1046,6 @@ header {
             }
         }
 
-    }
-
-    .credit {
-        text-align: center;
-        font-size: 2rem;
-        color: rgb(209, 211, 212);
-        margin-top: 5rem;
     }
 
 }
@@ -1119,8 +1079,6 @@ header {
             }
 
             .login {
-
-                font-size: 1.5rem;
         
                 .fa-bars {
                     display: block;
@@ -1140,10 +1098,6 @@ header {
 
                 .name-login {
                     font-size: 1.2rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
                 }
             }
         }
@@ -1201,9 +1155,14 @@ header {
 
                     li {
                         font-size: 3.6rem;
-                        line-height: 8rem;
-                        height: 8rem;
+                        line-height: 8.5rem;
+                        height: 6rem;
 
+                        &::before {
+                            top: 40%;
+                            height: 100%;
+                        } 
+    
                         @keyframes typing {
                             0%, 90%, 100% {
                                 width: 0;
@@ -1214,7 +1173,7 @@ header {
                             }          
                         }  
                     }
-
+                
                     @keyframes slide {
                         100% {
                             top: -190px;
@@ -1230,8 +1189,21 @@ header {
         }
         
     }
-}
 
+    .detail {   
+
+        .showtime {
+
+            a {
+
+                display: block;
+                width: 70%;
+            }
+        }    
+       
+    }
+
+}
 
 
 @media (max-width: 450px){
@@ -1253,7 +1225,7 @@ header {
             .search {
 
                 label {
-                    right: 5rem;
+                    right: 4rem;
                 }
             }
 
@@ -1350,6 +1322,11 @@ header {
                         line-height: 8rem;
                         height: 8rem;
 
+                        &::before {
+                            top: 20%;
+                            height: 60%;
+                        } 
+
                         @keyframes typing {
                             0%, 90%, 100% {
                                 width: 0;
@@ -1412,5 +1389,6 @@ header {
                 }
             }
         }
+
     }
 }
