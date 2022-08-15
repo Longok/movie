@@ -2,7 +2,7 @@
         <div class="image">
                 <%= link_to (image_tag film.display_image if film.image.attached?), film %>
         </div>
-        <div class="content">
+        <div class="content fs-4">
                 <%= link_to film.name, film_path(film) %> 
                 <p><i class="fas fa-clock"></i> <%= film.time %> phút</p>
         </div>

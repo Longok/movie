@@ -1,10 +1,12 @@
 
-<header class="header-active">
+<header class="header-active fixed-top">
 
-  <div class="header">
+  <div class="header d-flex justify-content-between align-items-center">
 
-    <div class="logo">
-      <%= image_tag "galaxy-logo.png" %>
+    <div class="logo pt-3">
+      <%= link_to root_path do %>
+        <%= image_tag "galaxy-logo.png", class:"pb-3 w-100" %>
+      <% end %>
     </div>
 
     <div class="search">
@@ -14,30 +16,30 @@
       </form>
     </div>
   
-    <ul class="login">
+    <ul class="login d-flex justify-content-between align-items-center m-0 p-0">
       <i class="fas fa-bars" id="menu-btn"></i>
 
       <% if logged_in %>
-        <li class="name-login">
-          <a class="header-name"><%= @current_user.name %></a>
-          <%= link_to "Thoát", logout_path, method: :delete %>
+        <li class="name-login d-flex justify-content-between align-items-center">
+          <a class="header-name fs-3"><%= @current_user.name %></a>
+          <%= link_to "Thoát", logout_path, method: :delete, class:"fs-3" %>
         </li>
       <% else %>
-        <li><%= link_to "Đăng nhập", login_path, class:"login-text" %></li>
+        <li><%= link_to "Đăng nhập", login_path, class:"login-text fs-3" %></li>
         <li><%= link_to "" , login_path, class:"fas fa-user" %></li>
       <% end %>
     </ul>
 
   </div>
 
-  <div class="navbar">
-    <ul >
-      <li><%= link_to "Trang chủ", '/' , class:"active" %></li>
-      <li><%= link_to "Phim", films_path %></li>
-      <li><%= link_to "Tin tức", '#news' %></li>
-      <li><%= link_to "Đánh giá", '#review' %></li>
-      <li><%= link_to "Hổ trợ", '#' %></li>
-      <li><%= link_to "Mua vé", '/titket'  %></li>
+  <div class="navbar justify-content-center">
+    <ul class="nav me-0 mb-0">
+      <li><%= link_to "Trang chủ", '/' , class:"active me-5 fs-3" %></li>
+      <li><%= link_to "Phim", films_path, class:"me-5 fs-3" %></li>
+      <li><%= link_to "Tin tức", '#news', class:"me-5 fs-3" %></li>
+      <li><%= link_to "Đánh giá", '#review', class:"me-5 fs-3" %></li>
+      <li><%= link_to "Hổ trợ", '#', class:"me-5 fs-3" %></li>
+      <li><%= link_to "Mua vé", '/titket', class:"me-5 fs-3" %></li>
     </ul>
 
   </div>

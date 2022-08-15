@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     # @films = Film.with_attached_image.order("id DESC")
-    @pagy, @films = pagy(Film.with_attached_image.order("id DESC"), items: 8)
+    @pagy, @films = pagy(Film.with_attached_image.order("RANDOM()"), items: 12)
 
   end
 
