@@ -8,7 +8,7 @@
     <%= f.text_field :code, value:[*'a'..'z', *0..9, *'A'..'Z'].shuffle[0...8].join, class:"form-control" %>
 
     <%= f.label :cash_number, "Số tiền" %>
-    <%= f.text_field :cash_number, class:"form-control" %>
+    <%= f.text_field :cash_number, value: 50000, class:"form-control" %>
 
     <%= f.label :payment_type, "Chọn kiểu thanh toán" %>
     <%= f.select :payment_type, Payment::PAYMENT_TYPE, class:"form-control" %>

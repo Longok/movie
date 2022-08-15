@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
-import "../stylesheets/application"
+import "../stylesheets/application.scss"
 
 require("jquery")
 // = require cloudinary
@@ -21,11 +21,11 @@ document.addEventListener("turbolinks:load", function() {
   $(".choose-seat").click(function() {
     var getId = $("#booking_seat_id").val($(this).data("id")).val();  
     seats.push(getId);
-    // console.log(seats);
-    // alert(seats);
     
+    $("form .choose-seat").removeClass('active');
     $(this).toggleClass("active");
     
+    $(".show-seat").empty();
     $(".show-seat").append( $(this).val($(this).data("id")).text());
     
   });
