@@ -22,4 +22,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  # database: db/production.sqlite3
+  url: <%= ENV["DATABASE_URL"] %>
+  database: movie_railway
+  username: movie
+  password: <%= ENV["MOVIE_DATABASE_PASSWORD"] %>
