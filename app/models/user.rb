@@ -24,7 +24,8 @@ class User < ApplicationRecord
         self.email == 'longadmin@gmail.com'
     end
 
-    after_create do
-        Stripe::Customer.create(email: self.email)
-    end
+    # after_create do
+    #     Stripe::Customer.create(email: self.email)
+    # end
+    # Disable Stripe in product railway
 end

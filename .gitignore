@@ -39,4 +39,5 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ignore application configuration
-/config/application.yml
+# Bật tắt các key, khi up lên host.(cloudinary, send email)
+# /config/application.yml

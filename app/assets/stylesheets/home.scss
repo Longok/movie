@@ -310,6 +310,10 @@ header {
         color: #00B70C;
     }
 
+    .register {
+        font-size: 1.6rem;
+    }
+
     form {
 
         input {
@@ -333,7 +337,10 @@ header {
         .movie-item,.search-movie {
 
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            // grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            // grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto;
             gap: 1.5rem;
             margin-bottom: 2rem;
             
@@ -354,6 +361,7 @@ header {
                         img {
                             width: 100%;
                             height: 100%;
+                            object-fit: cover;
                         }
                     }
 
@@ -365,6 +373,10 @@ header {
                             padding-top: 1rem;
                             margin-bottom: 0;
                             color: $primary-color;
+                        }
+
+                        a {
+                            display: block;
                         }
                     }
 
@@ -1190,6 +1202,18 @@ header {
         
     }
 
+    .container {
+
+        .movie {
+          
+            .movie-item,.search-movie {
+    
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }    
+    }
+
     .detail {   
 
         .showtime {
@@ -1358,6 +1382,12 @@ header {
 
         .movie {         
             padding: 0 6%;
+
+            .movie-item,.search-movie {
+        
+                display: grid;
+                grid-template-columns: repeat(1, 1fr); 
+            }
         }
 
         .review {

@@ -2,10 +2,10 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  # config.hosts << "https://movie.up.railway.app"
   # Code is not reloaded between requests.
   config.cache_classes = true
-
+  config.hosts.clear
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -28,7 +28,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = 'http://assets.example.com'
@@ -119,7 +119,8 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "https://movie237.herokuapp.com" }
+  # config.action_mailer.default_url_options = { host: "https://movie237.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "https://movie.up.railway.app" }
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
