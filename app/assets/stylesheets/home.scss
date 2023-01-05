@@ -378,6 +378,20 @@ header {
                         a {
                             display: block;
                         }
+
+                        .info {
+                            display: flex;
+                            justify-content: space-between;
+                            color: #e75916;
+                            font-size: small;
+                            margin-top: 1rem;
+        
+                            .review {
+                                .fa-solid {
+                                    color: #dfe233;
+                                }
+                            }
+                        }
                     }
 
             }   
@@ -977,6 +991,84 @@ header {
         }
     }
    
+    #toats {
+        position: fixed;
+        top: 8rem;
+        right: 3.2rem;
+        z-index: 1000;
+
+        .toats {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $primary-color;
+            border-radius: .2rem;
+            border-left: .4rem solid;
+            box-shadow: 0 .5rem .8rem rgba(0, 0, 0, .08);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            min-width: 40rem;
+            max-width: 45rem;
+            animation: showInfoInLeft ease-in .3s, offInfoInLeft linear 1.5s 3s forwards; 
+
+            .toats__icon {
+                padding: 0 1.6rem;
+                font-size: 2.4rem;
+            }
+            .toats__body {
+                flex-grow: 1;
+                .toats__title {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                }
+    
+                .toats__msg {
+                    font-size: 1.4rem;
+                    color: #888;
+                    margin-top: .6rem;
+                    line-height: 1.5;
+                }
+            }
+            .toats__close {
+                padding: 0 1.6rem;
+                font-size: 2rem;
+                color: rgba(0, 0, 0, .3);
+                cursor: pointer;
+            }
+        }
+        .toats--success {
+            border-color: #47d864;
+    
+            .toats__icon, .toats__title {
+                color: #47d864;
+            }
+        }   
+        .toats--info {
+            border-color: #2f86eb;
+    
+            .toats__icon, .toats__title {
+                color: #2f86eb;
+            }
+        }
+
+        @keyframes showInfoInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(calc(100% + 3.2rem));
+            }
+            to {
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
+
+        @keyframes offInfoInLeft {
+            to {
+                opacity: 0;
+
+            }
+        }
+    }
 }
 
 .footer {

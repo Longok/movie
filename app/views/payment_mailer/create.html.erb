@@ -1,15 +1,101 @@
 
-  <h1>MOVIE-APP XIN CHÀO !! <%= @user.name %></h1>
-  <h2>Bạn đã đặt vé thành công</h2>
-  <p>CHI TIẾT VÉ XEM PHIM</p>
-  -------------------------------</br>
-  <%= @payment.generate_qr_code.html_safe %>
-  <p>Mã code: <%= @payment.code %></p>
-  <p>Tên phim: <%= @payment.booking.showtime.film.name %></p>
-  <p>Xuất chiếu: <%= @payment.booking.showtime.in_time %> - <%= @payment.booking.showtime.in_date %></p>
-  <p>Số ghế: <%= @payment.booking.seat.name %> | <%= @payment.booking.seat.room.name %></p>
-  <p>Thành tiền: <%= number_with_delimiter(@payment.cash_number) %> đ</p>
-  <p>Ngày đặt: <%= @payment.created_at.strftime('%I: %M %p %d-%m-%Y') %></p>
-  --------------------------------</br>
-  <p>Cảm ơn bạn đã ủng hộ chúng tôi, chúc bạn một ngày tuyệt vời !</p>
+  <%# <%= @payment.generate_qr_code.html_safe %>
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Send Email</title>
 
+  <style>
+
+    @media screen {
+      img {
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 600px) {
+      .sm-block {
+        display: block !important;
+      }
+      .sm-py-8 {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+      .sm-px-12 {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+      .sm-text-center {
+        text-align: center !important;
+      }
+      .sm-w-full {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="display: flex; justify-content: center">
+    <%= image_tag attachments['galaxy-logo.png'].url %>
+  </h1>
+  <h2 style="text-align: center">XIN CHÀO <span style="color: red"><%= @user.name %></span> | <span style="color: blue">bạn đã đặt vé thành công</span></h2>
+
+  <h2 style="color: blue; margin: 0; font-size: 20px; text-align: center">CHI TIẾT VÉ XEM PHIM</h2> 
+
+  <div style="display:flex; margin: 50px; justify-content: center; align-items: center;">
+
+    <div style="width: 150px; margin-right: 5px; text-align: center">
+      <%= image_tag attachments[@filename].url %>
+      <%= @payment.generate_qr_code.html_safe %>
+    </div>
+
+    <div class="sm-block sm-text-center sm-py-8" style="padding-top: 50px">
+      <p class="sm-block sm-text-center sm-py-8" style="text-align: center">
+        Mã code: <span style="color: red"><%= @payment.code %> </span>
+      </p>
+      <p class="sm-block sm-text-center sm-py-8" style="text-align: center">
+        Tên phim: <span style="color: red"><%= @payment.booking.showtime.film.name %></span> 
+      </p>
+      <p class="sm-block sm-text-center sm-py-8" style="text-align: center">
+        Xuất chiếu: <span style="color: red"><%= @payment.booking.showtime.in_time %> - <%= @payment.booking.showtime.in_date %></span>
+      </p>
+      <p class="sm-block sm-text-center sm-py-8" style="text-align: center">
+        Số ghế: <span style="color: red"><%= @payment.booking.seat.name %> |  <%= @payment.booking.seat.room.name %></span>
+      </p>
+      <p class="sm-block sm-text-center sm-py-8" style="text-align: center">
+        Thành tiền: <span style="color: red"><%= number_with_delimiter(@payment.cash_number) %> đ</span>
+      </p>
+      <p class="sm-block sm-text-center sm-py-8" style="text-align: center">
+        Ngày đặt: <span style="color: red"><%= @payment.created_at %></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="sm-block sm-text-center sm-py-8" style="text-align: center">
+    <h2 style="color: blue">Cảm ơn bạn đã ủng hộ chúng tôi, chúc bạn một ngày tuyệt vời ! </h2>
+    <h2 class="all-font-montserrat" style="margin: 0; color: #4a5568; font-size: 20px;">&copy; Galaxy Cinema</h2>
+    <p style="padding-top: 5px; color: #718096; font-size: 14px;">Nguyễn Xí - Đà Nẵng </p>
+  </div>
+
+  <div class="sm-block sm-text-center sm-py-8" style="display: flex; justify-content: center">
+    <div class="sm-block sm-text-center sm-py-8" style="padding-left: 8px; padding-right: 8px;">
+      <a href="#" class="hover-text-gray-800" style="color: #718096; font-size: 14px; text-decoration: none;">Phim</a>
+    </div>
+    <div class="sm-block sm-text-center sm-py-8" style="padding-left: 8px; padding-right: 8px;">
+      <a href="#" class="hover-text-gray-800" style="color: #718096; font-size: 14px; text-decoration: none;">Tin tức</a>
+    </div>
+    <div class="sm-block sm-text-center sm-py-8" style="padding-left: 8px; padding-right: 8px;">
+      <a href="#" class="hover-text-gray-800" style="color: #718096; font-size: 14px; text-decoration: none;">Hỗ trợ</a>
+    </div>
+    <div class="sm-block sm-text-center sm-py-8" style="padding-left: 8px; padding-right: 8px;">
+      <a href="#" class="hover-text-gray-800" style="color: #718096; font-size: 14px; text-decoration: none;">Liên Hệ</a>
+    </div>
+  </div>
+</body>
+</html>
